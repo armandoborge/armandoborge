@@ -13,7 +13,7 @@ html, body {
     font-size: 14px;
     font-weight: 300;
     color: var(--color-polar);
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Raleway', sans-serif;
     background: url('../media/background.svg') no-repeat center center fixed var(--color-big-stone);
     background-size: cover;
 }
