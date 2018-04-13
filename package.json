@@ -1,0 +1,19 @@
+{
+  "name": "small-website",
+  "version": "1.0.0",
+  "description": "Small personal website using CSS grid",
+  "scripts": {
+    "start": "live-server public/"
+  },
+  "keywords": [
+    "css",
+    "web",
+    "html"
+  ],
+  "author": "Armando Borge",
+  "license": "ISC",
+  "devDependencies": {
+    "live-server": "^1.2.0"
+  },
+  "dependencies": {}
+}
