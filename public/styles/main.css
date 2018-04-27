@@ -10,7 +10,7 @@ html, body {
     margin: 0;
     border: 0;
     padding: 0;
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 300;
     color: var(--color-polar);
     font-family: 'Raleway', sans-serif;
@@ -58,9 +58,9 @@ html, body {
  * Avatar image
  ********************/
 .avatar {
-    width: 295px;
+    width: 280px;
     margin: 0 auto;
-    min-height: 295px;
+    min-height: 280px;
     background-image: url('../media/armandoborge.jpg');
     background-size: cover;
     border: 1px solid var(--color-fiord);
@@ -80,13 +80,13 @@ html, body {
 .name h1 {
     margin: 0 0 5px;
     font-weight: 300;
-    font-size: 24px;
+    font-size: 26px;
     color: var(--color-brandy);
 }
 .name h2 {
     margin: 0;
     font-weight: 300;
-    font-size: 16px;
+    font-size: 18px;
 }
 
 /*
@@ -101,8 +101,8 @@ html, body {
     float: left;
 }
 .contact h3 {
-    margin: 0 0 5px;
-    font-size: 14px;
+    margin: 0 0 7px;
+    font-size: 16px;
     font-weight: 300;
     color: var(--color-brandy);
 }
@@ -117,15 +117,14 @@ html, body {
     padding: 0;
 }
 .about h3 {
-    margin: 0 0 5px;
-    font-size: 14px;
+    margin: 0 0 7px;
+    font-size: 16px;
     font-weight: 300;
     color: var(--color-brandy);
 }
 .about p {
-    line-height: 20px;
+    line-height: 22px;
 }
-
 .about a {
     text-decoration: none;
     color: var(--color-brandy);
@@ -142,16 +141,14 @@ html, body {
     padding: 25px 0;
     text-align: center;
 }
-
 .links li {
     padding: 0;
     min-width: 50px;
     text-align: center;
     display: inline-block;
 }
-
 .links li a {
-    font-size: 20px;
+    font-size: 22px;
     text-decoration: none;
     color: var(--color-brandy);
 }
@@ -161,7 +158,7 @@ html, body {
  ********************/
 .footer {
     text-align: center;
-    padding: 9px 0;
+    padding: 10px 0;
 }
 
 
@@ -170,29 +167,24 @@ html, body {
     .main-wrapper {
         grid-template-columns: 250px 1fr;
         grid-template-areas:
-            'avatar    .'
             'avatar    name'
             'avatar    contact'
             'avatar    about'
             'avatar    links'
-            'avatar    .'
             'copyrigth copyrigth'
     }
-
     .avatar {
         width: 220px;
-        margin: 0 auto;
+        margin: auto auto auto 0;
         min-height: 560px;
         background-position: center 0;
         background-image: url('../media/armandoborge.jpg');
         background-size: cover;
     }
-
     .name {
         text-align: center;
         align-self: end;
     }
-
     .links {
         align-self: self-start;
     }
@@ -201,30 +193,21 @@ html, body {
 /* Medium devices (tablets, 768px and up)*/
 @media (min-width: 768px) {
     .main-wrapper {
-        max-width: 850px;
-        grid-template-columns: 320px 1fr;
+        max-width: 840px;
+        grid-template-columns: 300px 1fr;
         grid-template-areas:
-                'avatar    .'
                 'avatar    name'
                 'avatar    contact'
                 'avatar    about'
                 'avatar    links'
-                'avatar    .'
                 'copyrigth copyrigth'
     }
     .avatar {
-        width: 280px;
+        width: 270px;
         background-position: center 0;
         background-image: url('../media/armandoborge.jpg');
         background-size: cover;
         display: inline-block;
         position: relative;
-    }
-
-    .name {
-        text-align: left;
-    }
-    .name i {
-        display: none;
     }
 }

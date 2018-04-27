@@ -1,0 +1,51 @@
+{
+  "short_name": "Armando Borge",
+  "name": "Armando Borge - Personal Website",
+  "description": "Armando Borge Personal Website",
+  "icons": [
+    {
+      "src": "./media/icons/app@512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "./media/icons/app@256.png",
+      "sizes": "256x256",
+      "type": "image/png"
+    },
+    {
+      "src": "./media/icons/app@192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "./media/icons/app@180.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    },
+    {
+      "src": "./media/icons/app@167.png",
+      "sizes": "167x167",
+      "type": "image/png"
+    },
+    {
+      "src": "./media/icons/app@152.png",
+      "sizes": "152x152",
+      "type": "image/png"
+    },
+    {
+      "src": "./media/icons/app@144.png",
+      "sizes": "144x144",
+      "type": "image/png"
+    },
+    {
+      "src": "./media/icons/app@128.png",
+      "sizes": "128x128",
+      "type": "image/png"
+    }
+  ],
+  "start_url": "./index.html",
+  "display": "standalone",
+  "theme_color": "#0E1724",
+  "background_color": "#0E1724"
+}
