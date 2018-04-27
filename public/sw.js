@@ -1,5 +1,5 @@
-var MAIN_CACHE = 'shell';
-var DYNAMIC_CACHE = 'dynamic';
+var MAIN_CACHE = 'shell-v1';
+var DYNAMIC_CACHE = 'dynamic-v1';
 
 self.addEventListener('install', function(event) {
     event.waitUntil(
