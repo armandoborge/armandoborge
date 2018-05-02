@@ -1,5 +1,5 @@
-var MAIN_CACHE = 'shell-v1';
-var DYNAMIC_CACHE = 'dynamic-v1';
+var MAIN_CACHE = 'shell-v2';
+var DYNAMIC_CACHE = 'dynamic-v2';
 
 self.addEventListener('install', function(event) {
     event.waitUntil(
@@ -16,7 +16,7 @@ self.addEventListener('install', function(event) {
     )
 });
 
-self.addEventListener('fetch', function (event) {
+self.addEventListener('activate', function (event) {
     event.waitUntil(
         caches.keys().then(function(keyList) {
             return Promise.all(keyList.map(function(key){
@@ -39,7 +39,7 @@ self.addEventListener('fetch', function (event) {
                 return fetch(event.request)
                 .then(function (res) {
                     return caches.open(DYNAMIC_CACHE).then(function (cache) {
-                        cache.put(event.request.url, res.clone());
+                        cache.put(event.request, res.clone());
                         return res;
                     })
                 })
