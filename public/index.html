@@ -1,72 +1,208 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>Armando Borge</title>
+        <title>Armando Borge - Curriculum Vitae</title>
         <meta charset="utf-8">
-        <meta name="description" content="Armando Borge Personal Website">
-        <meta name="keywords" content="Armando Borge, Software, Travels, Programming, Javascript, Front-End, HTML, CSS, Web">
+        <meta name="description" content="Armando Borge - Curriculum Vitae">
+        <meta name="keywords" content="Armando Borge - Curriculum Vitae">
         <meta name="author" content="Armando Borge">
-        <meta name="theme-color" content="#0E1724">
+        <meta name="theme-color" content="#000000">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-        <link rel="apple-touch-icon" sizes="512x512" href="media/icons/app@512.png">
-        <link rel="apple-touch-icon" sizes="152x152" href="media/icons/app@152.png">
-        <link rel="apple-touch-icon" sizes="180x180" href="media/icons/app@180.png">
-        <link rel="apple-touch-icon" sizes="167x167" href="media/icons/app@167.png">
-
         <link rel="shortcut icon" href="favicon.png">
-        <link rel="manifest" href="manifest.json">
-        <link rel="stylesheet" href="styles/main.css">
-        <link href="https://fonts.googleapis.com/css?family=Raleway:300" rel="stylesheet">
-        <link href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" rel="stylesheet">
+        <link rel="stylesheet" href="styles/index.css">
+
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro&display=swap" rel="stylesheet">
     </head>
     <body>
-        <div class="bg-wrapper">
-            <div class="main-wrapper">
-                <div class="avatar"></div>
-                <div class="name">
-                    <h1><i class="fas fa-code"></i></h1>
-                    <h1>Armando Borge</h1>
-                    <h2>Software Engineer</h2>
-                </div>
-                <div class="contact">
-                    <div>
-                        <h3><i class="fas fa-mobile-alt"></i> Mobile</h3>
-                        <p>+56 9 9773 0950</p>
-                    </div>
-                    <div>
-                        <h3><i class="fas fa-globe"></i> Location</h3>
-                        <p>Planet Earth</p>
-                    </div>
-                </div>
-                <div class="about">
-                    <h3>About Me</h3>
-                    <p>I'm a Software Engineer travelling around the world while creating software. This is my small personal website, feel free to reach me if you want to say Hi! I'll be glad to hear from you...</p>
-                    <p>Below you'll find my online CV on <a href="https://www.linkedin.com/in/armandoborge" target="_blank" title="Armando Borge LinkedIn Profile" rel="noopener noreferrer">LinkedIn</a>, some <a href="https://travels.armandoborge.com" target="_blank" title="Photos Collection" rel="noopener noreferrer">photos</a> of the places I've been enjoying and my contact details, before you contact me, please be aware that I don't take on work outside of my job.</p>
-                </div>
-                <ul class="links">
-                    <li>
-                        <a href="https://www.linkedin.com/in/armandoborge" target="_blank" title="LinkedIn Profile" rel="noopener noreferrer">
-                            <i class="fab fa-linkedin-in"></i>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://travels.armandoborge.com" target="_blank" title="Photos Collection" rel="noopener noreferrer">
-                            <i class="fas fa-plane"></i>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://github.com/armandoborge" target="_blank" title="GitHub Profile" rel="noopener noreferrer">
-                            <i class="fab fa-github"></i>
-                        </a>
-                    </li>
-                    <li id="contactJS"></li>
-                </ul>
-                <div class="footer">
-                    <p>Copyright &copy; 2018. All rights reserved - Armando Borge</p>
+        <header class="header">
+            <h1>Armando Borge</h1>
+            <h2>Software Engineer</h2>
+        </header>
+        <main class="main">
+            <div class="bio">
+                <div class="bio-content">
+                    <img class="photo" src="media/armando_borge.jpg" alt="Armando Borge" />
+                    <h2>About</h2>
+                    <p>I'm Software Engineer travelling around the world, 12 years ago I've wrote my first line of code in C++, since then I've been involved in many software projects, each project more exciting and challenging than the other. On the road I've done many friends, I've learned many lessons and achieved many goals. Below some details of my career.</p>
+                    <p class="links">
+                        <a href="https://github.com/armandoborge" target="_blank" rel='noopener noreferrer' title="Armando Borge GitHub">GitHub</a>
+                        |
+                        <a href="https://www.linkedin.com/in/armandoborge/" target="_blank" rel='noopener noreferrer' title="Armando Borge LinkedIn">LinkedIn</a>
+                        |
+                        <a href="https://travels.armandoborge.com/" target="_blank" rel='noopener noreferrer' title="Armando Borge Travel Blog">Travels</a>
+                    </p>
                 </div>
             </div>
-        </div>
-        <script type="text/javascript" src="scripts/main.js"></script>
+            <div class="section-wrapper">
+                <div class="section-wrapper-inside">
+                    <section class="section">
+                        <h1 class="section-title">Experience</h1>
+                        <div class="list-wrapper">
+                            <div class="red-line"></div>
+                            <div class="list-item-wrapper">
+                                <div class="list-bullet">1</div>
+                                <div class="list-item">
+                                    <div class="list-company">The Entrepreneurial Adventure</div>
+                                    <div class="list-date">May 2019 - Present <span class="list-location">(San José, Costa Rica)</span></div>
+                                    <div class="list-position">Entrepreneur & Product Manager</div>
+                                    <div class="list-text">After all these years in the industry I've decided to take a sabbatical year to rest, learn, unlearn and work on personal ideas. At the beginning of this period I've created a health magazine called <a href="https://lacandidieta.com/" title="La Candidieta" rel='noopener noreferrer' target="_blank">La Candidieta</a> in order to help people in latin america suffering from a complicated condition called candidiasis.</div>
+                                    <div class="list-text">I've created a company called <a href="https://www.trippingcats.com" title="Tripping Cats" rel='noopener noreferrer' target="_blank">Tripping Cats</a>. We are currently developing a community management platform that promises a revolution in the way people interact in their neighborhoods. The first version of this software will be released on January 2020. The Team and I are excited about it.</div>
+                                </div>
+                            </div>
+                            <div class="list-item-wrapper">
+                                <div class="list-bullet">2</div>
+                                <div class="list-item">
+                                    <div class="list-company">Eleven Systems, LLC</div>
+                                    <div class="list-date">Feb 2015 - May 2019 <span class="list-location">(Mill Valley, California)</span></div>
+                                    <div class="list-position">Senior Software Engineer</div>
+                                    <div class="list-text"><a href="https://www.linkedin.com/company/elevensystems.com/about/" title="Eleven Systems" rel='noopener noreferrer' target="_blank">Eleven Systems</a> develops web-based and iOS mobile software that focuses on two main areas. The first is Family Office software, which allows ultra-high net worth customers to manage the complex mix of assets and investments that they control. Eleven Systems works with Jetson Systems (experts in high end home automation and control systems) as part of <a href="http://grassycreek.nl" title="Grassy Creek" rel='noopener noreferrer' target="_blank">Grassy Creek</a> to produce the Personal Life Manager. Personal Life Manager includes features to manage properties, financial assets, inventory, alternative investments, a private communication platform, and much more.</div>
+                                    <div class="list-text">On <a href="https://www.elevensystems.com" title="Eleven Systems" rel='noopener noreferrer' target="_blank">Eleven Systems</a> I was in charge of creating the fundamentals of the user interface architecture for all the web applications of the company, in addition to implementing the security layer in each one, in my last stage I also worked on applications for iOS (iPad & iPhone) using Swift and creating communication bridges between web and mobile applications.</div>
+                                </div>
+                            </div>
+                            <div class="list-item-wrapper">
+                                <div class="list-bullet">3</div>
+                                <div class="list-item">
+                                    <div class="list-company">Alinean, Inc.</div>
+                                    <div class="list-date">Nov 2013 - Feb 2015 <span class="list-location">(Orlando, Florida)</span></div>
+                                    <div class="list-position">Front-End JavaScript Developer</div>
+                                    <div class="list-text"><a href="https://www.linkedin.com/company/alinean-inc./" title="Alinean" rel='noopener noreferrer' target="_blank">Alinean</a> (Now Mediafly) makes it easy for companies to successfully incorporate interactive selling tools like ROI calculators, TCO and product comparisons, and diagnostic and benchmark assessments into existing sales processes.</div>
+                                    <div class="list-text">My job at Alinean was to develop the Front-End layer for the company's applications suite, as part of the core of the web development team.</div>
+                                </div>
+                            </div>
+                            <div class="list-item-wrapper">
+                                <div class="list-bullet">4</div>
+                                <div class="list-item">
+                                    <div class="list-company">Cambio Labs, LLC</div>
+                                    <div class="list-date">Jan 2012 - Nov 2013 <span class="list-location">(Vineyard, Utah)</span></div>
+                                    <div class="list-position">PHP Back-End & Frontend Developer</div>
+                                    <div class="list-text"><a href="https://www.cambioagency.com/" title="Cambio Labs" rel='noopener noreferrer' target="_blank">Cambio Labs</a> is a Utah based company passionate about building professional websites that make companies looks good and get more customers.</div>
+                                    <div class="list-text">I really enjoyed my time working for <a href="https://www.cambioagency.com/" title="Cambio Labs" rel='noopener noreferrer' target="_blank">Cambio Labs</a>, converting PSD templates to clean, pixel perfect and interactive web pages. Also I worked in the maintenance and new features development for a sales and inventory system.</div>
+                                </div>
+                            </div>
+                            <div class="list-item-wrapper">
+                                <div class="list-bullet">5</div>
+                                <div class="list-item">
+                                    <div class="list-company">ByB Software</div>
+                                    <div class="list-date">Apr 2011 - May 2013 <span class="list-location">(San José, Costa Rica)</span></div>
+                                    <div class="list-position">Fullstack Developer</div>
+                                    <div class="list-text">I've been helping ByBSoft creating Front-End code for their customers in the health industry, mainly software applications for clinics management and also real estate solutions.</div>
+                                </div>
+                            </div>
+                            <div class="list-item-wrapper">
+                                <div class="list-bullet">6</div>
+                                <div class="list-item">
+                                    <div class="list-company">Othos Telecomunicações</div>
+                                    <div class="list-date">Jan 2010 - Apr 2011 <span class="list-location">(São Paulo, Brazil)</span></div>
+                                    <div class="list-position">UIX Designer / Front-End Developer</div>
+                                    <div class="list-text">Othos is a telecommunications service provider that offers different products and services based on high-end technology (VoIP). I've worked with network specialists and communication engineers providing them with user interfaces for the solutions they created. My work was to abstract the complexity of those systems using a simple UI layer for the final users.</div>
+                                </div>
+                            </div>
+                            <div class="list-item-wrapper">
+                                <div class="list-bullet">7</div>
+                                <div class="list-item">
+                                    <div class="list-company">Mia Films & Seat For Two</div>
+                                    <div class="list-date">Jan 2008 - Dec 2009 <span class="list-location">(San José, Costa Rica)</span></div>
+                                    <div class="list-position">FullStack Developer & Front-End Lead</div>
+                                    <div class="list-text">I've started at Mia Films as Full Stack Developer, the company was developing a dating site, enjoyed my time here creating MySQL tables, PHP classes, doing systems analysis and creating the UI to support it. The project grew up enough and was launched with great success. A new company was created for the project: Seat For Two, so I've started a second phase on this company as a Front-End Lead.</div>
+                                </div>
+                                <div class="mine-shaft-line"></div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+            <div class="section-wrapper cape">
+                <div class="section-wrapper-inside">
+                    <section class="section">
+                        <h1 class="section-title">Education</h1>
+                        <div class="list-wrapper">
+                            <div class="red-line"></div>
+                            <div class="list-item-wrapper">
+                                <div class="list-bullet">1</div>
+                                <div class="list-item">
+                                    <div class="list-company">Adventist University of Central America</div>
+                                    <div class="list-date">Jan 2005 - Dec 2010 <span class="list-location">(Alajuela, Costa Rica)</span></div>
+                                    <div class="list-position">Bachelor Degree in Computer Science</div>
+                                    <div class="list-text">Amazed by computers in my early years I've started studying computer science in 2005, I've learn algorithms, programming, integrated circuit design, operating systems fundamentals among many other things. Those years I've discovered C, C++, Cobol, Pascal, PHP, Javascript and many other languages, just to confirm that programming is my thing.</div>
+                                </div>
+                            </div>
+                            <div class="list-item-wrapper">
+                                <div class="list-bullet">2</div>
+                                <div class="list-item">
+                                    <div class="list-company">Adventist University of Central America</div>
+                                    <div class="list-date">Jan 2011 - Dec 2012 <span class="list-location">(Alajuela, Costa Rica)</span></div>
+                                    <div class="list-position">Licentiate Degree in Computer Science</div>
+                                    <div class="list-text">I continued my education in the same university, in order to keep deepening my knowledge in computers, I was already working at that time and ended up creating the first registration and students control system for my university.</div>
+                                </div>
+                                <div class="cape-cod-line"></div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+            <div class="section-wrapper">
+                <div class="section-wrapper-inside">
+                    <section class="section">
+                        <h1 class="section-title">References</h1>
+                        <div class="references">
+                            <figure class="reference">
+                                <blockquote>Armando is a pleasure to work with. He is honest, hardworking, fast and has great front-end development skills.</blockquote>
+                                <a href="https://www.linkedin.com/in/andrewallgaier/" class="author" title="Andrew Allgaier">
+                                    <img src="media/andrew.jpeg" alt="sq-sample1"/>
+                                    <h5>Andrew Allgaier <span>Founder at Cambio Agency</span></h5>
+                                </a>
+                            </figure>
+                            <figure class="reference hover">
+                                <blockquote>Armando was a big help and easy to work with our projects, has a very good knowledge, is a fast learner and proactive.</blockquote>
+                                <a href="https://www.linkedin.com/in/manuelbenavides/" class="author" title="Manuel Benavides">
+                                    <img src="media/manuel.jpeg" alt="sq-sample24"/>
+                                    <h5>Manuel Benavides <span>Founder at ByBSoft</span></h5>
+                                </a>
+                            </figure>
+                        </div>
+                        <figure class="reference outside">
+                            <blockquote>I rarely come across real talents who stand out like Armando. I had the pleasure of working with him for three years. Armando's ability to handle the projects was unlike any I’ve seen before and made a dramatic increase in the productivity level of our team.</blockquote>
+                            <a href="https://www.linkedin.com/in/sylviablanco/" class="author" title="Sylvia Blanco">
+                                <img src="media/sylvia.jpeg" alt="sq-sample29"/>
+                                <h5>Sylvia Blanco <span>Founder at Seat For Two</span></h5>
+                            </a>
+                        </figure>
+                    </section>
+                </div>
+            </div>
+            <section id="contact" class="cape">
+                <div class="contact">
+                    <div>
+                        <h1>Contact Me</h1>
+                        <p>If you have an interesting project and you think that my abilities can be useful to you, do not hesitate to contact me.</p>
+                        <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" class={css.contact}>
+                            <label for="contact-email">
+                                <span class="hidden">Email</span>
+                                <input type="email" name="contact-email" id="contact-email" placeholder="Email" required />
+                            </label>
+                            <label for="contact-name">
+                                <span class="hidden">Name</span>
+                                <input type="text" name="contact-name" id="contact-name" placeholder="Name" />
+                            </label>
+                            <label for="contact-message">
+                                <span class="hidden">Message</span>
+                                <textarea name="contact-message" id="contact-message" placeholder="Message"></textarea>
+                            </label>
+                            <label for="bot-field" class="hidden">
+                                <span>Bot field, if you're human don't fill it</span>
+                                <input name="bot-field" id="bot-field" />
+                            </label>
+                            <input type="hidden" name="form-name" value="contact" />
+                            <div class={css.button}>
+                                <button type="submit" class="button">
+                                    <span>Send</span>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </section>
+        </main>
     </body>
 </html>

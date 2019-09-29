@@ -1,7 +1,7 @@
 {
-  "name": "small-website",
+  "name": "armando-borge",
   "version": "1.0.0",
-  "description": "Small personal website using CSS grid",
+  "description": "Armando Borge Website",
   "scripts": {
     "start": "live-server public/"
   },
@@ -11,9 +11,9 @@
     "html"
   ],
   "author": "Armando Borge",
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
-    "live-server": "^1.2.0"
+    "live-server": "^1.2.1"
   },
   "dependencies": {}
 }

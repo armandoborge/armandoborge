@@ -1,3 +1,0 @@
-# disable hotlink protection
-RewriteEngine on
-RewriteRule ^.*$ -
