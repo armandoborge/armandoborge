@@ -148,12 +148,12 @@ form button {
  */
 .bio {
     padding: 60px 40px;
-    background: url('../media/map.svg') no-repeat center center fixed var(--color-cape-cod);
+    background: url('../media/map.svg') no-repeat center center var(--color-cape-cod);
     background-size: cover;
 }
 @media (min-width: 992px) {
     .bio {
-        background: url('../media/map.svg') no-repeat center center fixed var(--color-cape-cod);
+        background: url('../media/map.svg') no-repeat center center var(--color-cape-cod);
         background-size: contain;
     }
 }
