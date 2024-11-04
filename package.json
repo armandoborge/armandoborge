@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "Armando Borge Website",
   "scripts": {
-    "start": "live-server public/"
+    "build": "npx tailwindcss -i ./src/assets/css/main.css -o ./dist/styles.css --watch",
+    "serve": "live-server --no-browser",
+    "dev": "concurrently \"npm run build\" \"npm run serve\""
   },
   "keywords": [
     "css",
@@ -13,7 +15,11 @@
   "author": "Armando Borge",
   "license": "MIT",
   "devDependencies": {
-    "live-server": "^1.2.1"
-  },
-  "dependencies": {}
+    "autoprefixer": "^10.0.0",
+    "concurrently": "^9.1.0",
+    "live-server": "^1.2.1",
+    "postcss": "^8.0.0",
+    "prettier": "3.3.3",
+    "tailwindcss": "^3.0.0"
+  }
 }
