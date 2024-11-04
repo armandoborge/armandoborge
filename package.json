@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "description": "Armando Borge Website",
   "scripts": {
-    "build": "npx tailwindcss -i ./src/assets/css/main.css -o ./dist/styles.css --watch",
-    "serve": "live-server --no-browser",
-    "dev": "concurrently \"npm run build\" \"npm run serve\""
+    "build": "mkdir -p dist && cp -r src/* dist && npx tailwindcss -i ./src/assets/css/main.css -o ./dist/assets/css/main.css --minify",
+    "serve": "live-server dist --no-browser",
+    "dev": "concurrently \"npm run build --watch\" \"npm run serve\""
   },
   "keywords": [
     "css",
