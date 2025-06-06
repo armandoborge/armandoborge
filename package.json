@@ -1,0 +1,18 @@
+{
+  "name": "armando-borge",
+  "version": "2.0.0",
+  "description": "Armando Borge Personal Website",
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/preact": "^4.1.0",
+    "@astrojs/rss": "^4.0.12",
+    "astro": "^5.8.2",
+    "preact": "^10.26.8"
+  }
+}
