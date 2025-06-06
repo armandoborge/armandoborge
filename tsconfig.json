@@ -4,6 +4,19 @@
     "exclude": ["dist"],
     "compilerOptions": {
         "jsx": "react-jsx",
-        "jsxImportSource": "preact"
-    }
+        "jsxImportSource": "preact",
+        //
+        // Import aliases
+        "baseUrl": ".",
+        "paths": {
+            "@src/*": ["src/*"],
+            "@blog/*": ["src/blog/*"],
+            "@components/*": ["src/components/*"],
+            "@layouts/*": ["src/layouts/*"],
+            "@pages/*": ["src/pages/*"],
+            "@scripts/*": ["src/scripts/*"],
+            "@styles/*": ["src/styles/*"],
+        }
+    },
+
 }

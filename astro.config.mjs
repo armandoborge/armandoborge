@@ -7,4 +7,7 @@ import preact from '@astrojs/preact'
 export default defineConfig({
     site: 'https://www.armandoborge.com',
     integrations: [preact()],
+    devToolbar: {
+        enabled: false,
+    },
 })
