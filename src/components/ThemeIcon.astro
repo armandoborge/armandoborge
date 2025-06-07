@@ -2,7 +2,7 @@
 
 ---
 
-<button id='themeToggle' class="border-0 bg-transparent">
+<button id='themeToggle' class='border-0 bg-transparent'>
     <svg width='30px' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'>
         <path
             class='fill-black dark:fill-transparent'
@@ -45,5 +45,7 @@
         localStorage.setItem('theme', isDark ? 'dark' : 'light')
     }
 
-    document.getElementById('themeToggle')?.addEventListener('click', handleToggleClick)
+    document
+        .getElementById('themeToggle')
+        ?.addEventListener('click', handleToggleClick)
 </script>

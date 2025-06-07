@@ -14,9 +14,11 @@ const { pageTitle } = Astro.props
         <meta name='generator' content={Astro.generator} />
         <title>{pageTitle}</title>
     </head>
-    <body class="mx-auto w-full max-w-[80ch] p-4 leading-relaxed bg-slate-100 dark:bg-[#0d0950] dark:text-white">
+    <body
+        class='font-inter mx-auto w-full max-w-[80ch] bg-slate-100 p-4 leading-relaxed dark:bg-[#0d0950] dark:text-white'
+    >
         <Header />
-        <h1 class="my-4 text-4xl">{pageTitle}</h1>
+        <h1 class='my-4 text-4xl font-semibold'>{pageTitle}</h1>
         <slot />
         <Footer />
         <script>
