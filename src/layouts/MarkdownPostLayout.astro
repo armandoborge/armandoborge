@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '@layouts/BaseLayout.astro'
+
 const { frontmatter } = Astro.props
 ---
 
@@ -19,9 +20,14 @@ const { frontmatter } = Astro.props
                 </p>
             ))
         }
+        <div
+            class='prose dark:prose-invert prose-h1:font-bold prose-h1:text-xl prose-a:text-blue-600 prose-p:text-justify prose-img:rounded-xl prose-headings:underline'
+        >
+            <slot />
+        </div>
     </div>
-    <slot />
 </BaseLayout>
+
 <style>
     a {
         color: #00539f;
