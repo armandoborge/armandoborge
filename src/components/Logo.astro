@@ -1,0 +1,19 @@
+---
+import { Image } from 'astro:assets'
+import HeaderImage from '@/img/ab.png'
+---
+
+<a
+    href='/public'
+    class='hover:ring-red h-10 w-10 rounded-full p-0.5 ring-1 ring-black/80 hover:ring-2 dark:bg-zinc-800/90 dark:ring-white/80'
+>
+    <span class='sr-only'>Armando Borge Personal Website</span>
+    <Image
+        src={HeaderImage}
+        alt='Armando Borge Personal Website'
+        class='rounded-full opacity-90'
+        width={36}
+        height={36}
+        densities={[2]}
+    />
+</a>

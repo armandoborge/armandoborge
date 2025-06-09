@@ -6,7 +6,7 @@ export async function GET(context) {
 
     return rss({
         title: 'Armando Borge',
-        description: 'Personal Website',
+        description: 'Armando Borge Personal Website',
         site: context.site,
         items: posts.map((post) => {
             const { id, title, description, pubDate } = post.data

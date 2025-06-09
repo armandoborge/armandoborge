@@ -1,7 +1,7 @@
 ---
-import Header from '@components/Header.astro'
-import Footer from '@components/Footer.astro'
-import '@styles/global.css'
+import '@/styles/global.css'
+import Header from '@/components/Header.astro'
+import Footer from '@/components/Footer.astro'
 
 const { pageTitle } = Astro.props
 ---
@@ -9,20 +9,17 @@ const { pageTitle } = Astro.props
 <html lang='en'>
     <head>
         <meta charset='utf-8' />
-        <link rel='icon' type='image/svg+xml' href='/favicon.svg' />
+        <link rel='icon' type='image/png' href='/favicon.png' />
         <meta name='viewport' content='width=device-width' />
-        <meta name='generator' content={Astro.generator} />
-        <title>{pageTitle}</title>
+        <title>Armando Borge | {pageTitle}</title>
     </head>
     <body
-        class='font-inter mx-auto w-full max-w-[80ch] bg-slate-100 p-4 leading-relaxed dark:bg-[#0d0950] dark:text-white'
+        class='font-inter mx-auto w-full max-w-6xl bg-white px-4 pt-8 pb-8 text-black md:px-10 dark:bg-black dark:text-white'
     >
         <Header />
-        <h1 class='my-4 text-4xl font-semibold'>{pageTitle}</h1>
-        <slot />
+        <main class='min-h-[calc(100vh-128px)] py-12'>
+            <slot />
+        </main>
         <Footer />
-        <script>
-            import '@scripts/menu.js'
-        </script>
     </body>
 </html>
