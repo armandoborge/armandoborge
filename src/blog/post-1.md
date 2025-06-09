@@ -25,7 +25,6 @@ Welcome to my _new blog_ about learning Astro! Here, I will share my learning jo
 
 I will finish the Astro tutorial, and then keep adding more posts. Watch this space for more to come.
 
-
 # My First Blog Post
 
 Welcome to my _new blog_ about learning Astro! Here, I will share my learning journey as I build a new website.
@@ -41,7 +40,6 @@ Welcome to my _new blog_ about learning Astro! Here, I will share my learning jo
 ## What's next
 
 I will finish the Astro tutorial, and then keep adding more posts. Watch this space for more to come.
-
 
 # My First Blog Post
 
@@ -61,9 +59,9 @@ I will finish the Astro tutorial, and then keep adding more posts. Watch this sp
 
 ```html
 <head>
-    <meta charset='utf-8' />
-    <link rel='icon' type='image/png' href='/favicon.png' />
-    <meta name='viewport' content='width=device-width' />
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <meta name="viewport" content="width=device-width" />
     <title>Armando Borge | {pageTitle}</title>
 </head>
 ```
