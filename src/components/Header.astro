@@ -6,12 +6,15 @@ const menuItems = [
     { url: '/blog', label: 'Blog' },
     { url: '/work', label: 'Work' },
     { url: '/projects', label: 'Projects' },
-    { url: 'https://travels.armandoborge.com/', label: 'Travels' },
+    { url: 'https://travels.armandoborge.com', label: 'Travels' },
 ]
 ---
 
-<header>
-    <nav class='mx-auto flex items-center justify-between' aria-label='Global'>
+<header class='sticky top-0 z-10 bg-white dark:bg-black'>
+    <nav
+        class='mx-auto flex w-full max-w-7xl items-center justify-between px-4 pt-8 pb-2 md:px-10 lg:px-14'
+        aria-label='Global'
+    >
         <Logo />
         <!-- Open mobile menu button -->
         <div class='flex md:hidden'>
