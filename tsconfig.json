@@ -10,8 +10,8 @@
             "@/src/*": ["./src/*"],
             "@/blog/*": ["./src/blog/*"],
             "@/components/*": ["./src/components/*"],
-            "@/css/*": ["./src/css/*"],
-            "@/img/*": ["./src/img/*"],
+            "@/css/*": ["./src/assets/css/*"],
+            "@/img/*": ["./src/assets/img/*"],
             "@/layouts/*": ["./src/layouts/*"],
             "@/pages/*": ["./src/pages/*"]
         }
