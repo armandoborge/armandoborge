@@ -1,48 +1,27 @@
 ---
-import { Image } from 'astro:assets'
 import { Content as BioText } from '@/pages/_bio.md'
-import ProfilePicture from '@/img/ab.png'
 
 import BaseLayout from '@/layouts/BaseLayout.astro'
-import PageTitle from '@/components/PageTitle.astro'
+import ContactBtn from '@/components/ContactBtn.astro'
+import PageHeader from '@/components/PageHeader.astro'
+import SideProfileImage from '@/components/SideProfileImage.astro'
 
 const pageTitle = 'Home'
 ---
 
 <BaseLayout pageTitle={pageTitle}>
     <div>
-        <Image
-            src={ProfilePicture}
-            alt='Armando Borge ~ Personal Website'
-            class='mx-auto mt-20 block size-40 rotate-[-15deg] rounded-sm shadow-black brightness-105 grayscale-75 md:mx-0 md:size-48 lg:hidden'
-            width={200}
-            height={200}
-            densities={[2]}
-        />
-        <div class='text-center md:text-left'>
-            <PageTitle title='Armando Borge' />
-        </div>
+        <PageHeader title='Armando Borge' />
         <div class='grid gap-8 lg:grid-cols-[auto_1fr]'>
-            <Image
-                src={ProfilePicture}
-                alt='Armando Borge ~ Personal Website'
-                class='mx-auto my-10 mr-10 hidden rotate-[-15deg] rounded-sm shadow-black brightness-105 grayscale-75 lg:block'
-                width={200}
-                height={200}
-                densities={[2]}
-            />
+            <SideProfileImage />
             <div
                 class='prose prose-a:text-red w-full max-w-none text-black md:columns-2 dark:text-white'
             >
                 <BioText />
             </div>
-            <div class="hidden lg:block"></div>
-            <div class="md:pl-[50%]">
-                <a
-                    class='hover:bg-red inline-block rounded-md bg-black px-4 py-2 font-semibold text-white dark:bg-white dark:text-black'
-                    href='/contact'
-                    >Let's work together <span aria-hidden='true'>→</span></a
-                >
+            <div class='hidden lg:block'></div>
+            <div class='md:pl-[50%]'>
+                <ContactBtn />
             </div>
         </div>
     </div>

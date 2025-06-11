@@ -1,0 +1,113 @@
+---
+import WorkItem from '@/components/WorkItem.astro'
+import BaseLayout from '@/layouts/BaseLayout.astro'
+import PageHeader from '@/components/PageHeader.astro'
+import ContactBtn from '@/components/ContactBtn.astro'
+import SideProfileImage from '@/components/SideProfileImage.astro'
+
+const pageTitle = 'Work'
+const positions = [
+    {
+        roleName: 'Principal Web Architect',
+        companyName: 'Tribu Yoga',
+        companyCountry: 'Tallinn, Estonia',
+        fromYear: '2022',
+        description:
+            'Responsible for all technical strategy and execution at Tribu Yoga, a SaaS platform for yoga studios operating across Latin America and Europe. Led the architectural design and implementation of scalable systems, aligning business goals with technology solutions. Collaborated closely with stakeholders to ensure seamless integration of product vision and engineering execution. Oversaw the entire technical roadmap from conception through deployment.',
+        url: 'https://www.tribu.yoga',
+    },
+    {
+        roleName: 'Lead Cloud Architect',
+        companyName: 'Airbank (Acquired by Pliant)',
+        companyCountry: 'Berlin, Germany',
+        fromYear: '2021',
+        toYear: '2023',
+        description:
+            'Led the architecture and operations of all cloud infrastructure at Airbank, a Berlin-based fintech startup providing unified banking and cash flow management for SMEs—acquired by Pliant in 2023. Designed and deployed secure, compliant, and scalable cloud environments using AWS and GCP. Spearheaded penetration testing initiatives, managed system observability and reliability, and worked closely with cross-functional teams to deliver resilient, cloud-native solutions.',
+        url: 'https://www.getpliant.com',
+    },
+    {
+        roleName: 'Co-Founder & CTO',
+        companyName: 'Tripping Cats OÜ',
+        companyCountry: 'Tallinn, Estonia',
+        fromYear: '2019',
+        description:
+            'Co-founded a boutique digital product studio based in Estonia. Directed architecture and engineering for a range of custom-built applications, leveraging React, Serverless, AWS, and FaunaDB. Focused on delivering high-impact software on lean budgets with a remote-first team. Defined technical direction, product strategy, and development lifecycles while maintaining top-tier performance and scalability.',
+        url: 'https://www.trippingcats.com',
+    },
+    {
+        roleName: 'Senior Front-End Developer',
+        companyName: 'Eleven Systems LLC',
+        companyCountry: 'California, United States',
+        fromYear: '2015',
+        toYear: '2019',
+        description:
+            'Eleven Systems offers software solutions to high-net-worth individuals that help them to manage their finances, messages, and properties. Developed the front-end architecture for enterprise web and mobile applications at a U.S.-based consulting firm specializing in digital transformation. Built robust UI layers using Angular and React, and implemented iOS applications using Swift. Automated deployment pipelines, optimized frontend performance, and enhanced code maintainability and security across diverse projects and clients.',
+        url: 'https://www.elevensystems.com',
+    },
+    {
+        roleName: 'Senior Back-End / Front-End Developer',
+        companyName: 'Alinean Inc.',
+        companyCountry: 'Florida, United States',
+        fromYear: '2012',
+        toYear: '2015',
+        description:
+            'Developed and maintained front-end components for Alinean’s suite of interactive B2B sales tools—such as ROI calculators, TCO tools, and product comparison platforms—used by Fortune 500 clients. Contributed as a core member of the web development team during Alinean’s rapid growth phase, prior to its acquisition by Mediafly in 2016.',
+        url: 'https://www.mediafly.com',
+    },
+    {
+        roleName: 'PHP Back-End / Front-End Developer',
+        companyName: 'Cambio Agency LLC',
+        companyCountry: 'Utah, United States',
+        fromYear: '2012',
+        toYear: '2013',
+        description:
+            'Cambio Agency is at a U.S.-based digital agency specializing in SMB website design and development. Translated PSD designs into pixel-perfect, responsive interfaces and contributed to the development and enhancement of a custom-built inventory and sales management system. Focused on performance, clean code, and user-centric UI practices.',
+        url: 'https://cambioagency.com',
+    },
+    {
+        roleName: 'UI/UX Designer & Front-End Developer',
+        companyName: 'Othos Telecomunicações',
+        companyCountry: 'São Paulo, Brazil',
+        fromYear: '2011',
+        toYear: '2012',
+        description:
+            'Designed and developed UI layers for enterprise-grade VoIP solutions at a Brazilian telecom provider. Partnered with network engineers to simplify complex backend systems into intuitive interfaces, significantly improving customer satisfaction and usability for business clients in Latin America and South Africa.',
+        url: 'https://www.voipeasy.co.za',
+    },
+    {
+        roleName: 'Full-Stack Developer',
+        companyName: 'Mia Films Network',
+        companyCountry: 'San José, Costa Rica',
+        fromYear: '2008',
+        toYear: '2010',
+        description:
+            'Joined as a Full-Stack Developer to architect and implement a dating platform named Seat For Two. Designed MySQL schemas, developed PHP backends, and built front-end UIs from scratch. After a successful launch, transitioned to lead the front-end team under a new business unit created for the product’s expansion.',
+        url: 'https://miafilmsnetwork.com',
+    },
+]
+---
+
+<BaseLayout pageTitle={pageTitle}>
+    <div>
+        <PageHeader title='Work Experience' />
+        <div class='grid gap-8 lg:grid-cols-[auto_1fr]'>
+            <SideProfileImage />
+            <div class='space-y-16'>
+                {
+                    positions.map((position) => (
+                        <WorkItem
+                            roleName={position.roleName}
+                            companyName={position.companyName}
+                            companyCountry={position.companyCountry}
+                            fromYear={position.fromYear}
+                            toYear={position.toYear}
+                            description={position.description}
+                            url={position.url}
+                        />
+                    ))
+                }
+            </div>
+        </div>
+    </div>
+</BaseLayout>
