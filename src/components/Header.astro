@@ -7,7 +7,7 @@ const menuItems = [
     { url: '/work', label: 'Work' },
     { url: '/projects', label: 'Projects' },
     { url: '/contact', label: 'Contact' },
-    { url: 'https://travels.armandoborge.com', label: 'Travels' },
+    { url: 'https://travels.armandoborge.com', label: 'Travels', target: '_blank', rel: 'noopener noreferrer' },
 ]
 ---
 
@@ -44,8 +44,8 @@ const menuItems = [
         <!-- Desktop Menu -->
         <div class='hidden text-sm/6 font-medium md:flex md:gap-x-12'>
             {
-                menuItems.map(({ url, label }) => (
-                    <a href={url} class='hover:text-ajna'>
+                menuItems.map(({ url, label, ...rest }) => (
+                    <a href={url} class='hover:text-ajna' {...rest}>
                         {label}
                     </a>
                 ))
