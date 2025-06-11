@@ -10,10 +10,10 @@
             "@/src/*": ["./src/*"],
             "@/blog/*": ["./src/blog/*"],
             "@/components/*": ["./src/components/*"],
+            "@/css/*": ["./src/css/*"],
             "@/img/*": ["./src/img/*"],
             "@/layouts/*": ["./src/layouts/*"],
-            "@/pages/*": ["./src/pages/*"],
-            "@/styles/*": ["./src/styles/*"]
+            "@/pages/*": ["./src/pages/*"]
         }
     }
 }

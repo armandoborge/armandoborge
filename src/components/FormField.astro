@@ -1,0 +1,10 @@
+---
+const { labelFor, labelText } = Astro.props
+---
+
+<div>
+    <label for={labelFor} class='text-sm'>{labelText}:</label>
+    <div class='mt-1'>
+        <slot />
+    </div>
+</div>

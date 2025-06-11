@@ -3,17 +3,22 @@ import { Image } from 'astro:assets'
 import ProfilePicture from '@/img/ab.png'
 import PageTitle from '@/components/PageTitle.astro'
 
-const { title } = Astro.props
+const { title, showImage = true } = Astro.props
 ---
 
-<Image
-    src={ProfilePicture}
-    alt='Armando Borge ~ Personal Website'
-    class='shadow-yang mx-auto mt-20 block size-40 rotate-[-15deg] rounded-sm brightness-105 grayscale-75 md:mx-0 md:size-48 lg:hidden'
-    width={200}
-    height={200}
-    densities={[2]}
-/>
+{
+    showImage && (
+        <Image
+            src={ProfilePicture}
+            alt='Armando Borge ~ Personal Website'
+            class='shadow-yang mx-auto mt-20 block size-40 rotate-[-15deg] rounded-sm brightness-105 grayscale-75 md:mx-0 md:size-48 lg:hidden'
+            width={200}
+            height={200}
+            densities={[2]}
+        />
+    )
+}
+
 <div class='mb-12 text-center md:text-left'>
     <PageTitle title={title} />
 </div>

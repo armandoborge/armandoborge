@@ -2,7 +2,6 @@
 import WorkItem from '@/components/WorkItem.astro'
 import BaseLayout from '@/layouts/BaseLayout.astro'
 import PageHeader from '@/components/PageHeader.astro'
-import ContactBtn from '@/components/ContactBtn.astro'
 import SideProfileImage from '@/components/SideProfileImage.astro'
 
 const pageTitle = 'Work'
@@ -89,25 +88,23 @@ const positions = [
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-    <div>
-        <PageHeader title='Work Experience' />
-        <div class='grid gap-8 lg:grid-cols-[auto_1fr]'>
-            <SideProfileImage />
-            <div class='space-y-16'>
-                {
-                    positions.map((position) => (
-                        <WorkItem
-                            roleName={position.roleName}
-                            companyName={position.companyName}
-                            companyCountry={position.companyCountry}
-                            fromYear={position.fromYear}
-                            toYear={position.toYear}
-                            description={position.description}
-                            url={position.url}
-                        />
-                    ))
-                }
-            </div>
+    <PageHeader title='Work Experience' />
+    <div class='grid gap-10 lg:grid-cols-[auto_1fr]'>
+        <SideProfileImage />
+        <div class='space-y-16'>
+            {
+                positions.map((position) => (
+                    <WorkItem
+                        roleName={position.roleName}
+                        companyName={position.companyName}
+                        companyCountry={position.companyCountry}
+                        fromYear={position.fromYear}
+                        toYear={position.toYear}
+                        description={position.description}
+                        url={position.url}
+                    />
+                ))
+            }
         </div>
     </div>
 </BaseLayout>

@@ -1,0 +1,79 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro'
+import FormField from '@/components/FormField.astro'
+import PageTitle from '@/components/PageTitle.astro'
+
+const pageTitle = 'Contact'
+---
+
+<BaseLayout pageTitle={pageTitle}>
+    <div class='mx-auto max-w-2xl'>
+        <div class='mb-12 text-center'>
+            <PageTitle title={pageTitle} />
+            <div>
+                <h2 class='text-ajna mb-1 text-base font-medium md:text-lg'>
+                    Let's talk about your project
+                </h2>
+                <p class='leading-loose'>
+                    I am actively seeking innovative and ambitious projects. If
+                    you have a compelling idea and need a business partner to
+                    bring it to life, I welcome the opportunity to collaborate.
+                </p>
+            </div>
+        </div>
+        <div
+            class='mx-auto flex w-full max-w-xl flex-col gap-16 sm:gap-y-20 lg:flex-row'
+        >
+            <form
+                name='contact'
+                method='POST'
+                data-netlify='true'
+                class='lg:flex-auto'
+                action='/success'
+            >
+                <div class='grid grid-cols-1 gap-x-8 gap-y-6'>
+                    <FormField labelFor='name' labelText='Name'>
+                        <input
+                            type='text'
+                            name='name'
+                            id='name'
+                            autocomplete='name'
+                            class='global-input'
+                            required
+                        />
+                    </FormField>
+                    <FormField labelFor='email' labelText='Email'>
+                        <input
+                            type='email'
+                            name='email'
+                            id='email'
+                            autocomplete='email'
+                            class='global-input'
+                            required
+                        />
+                    </FormField>
+                    <FormField labelFor='website' labelText='Website'>
+                        <input
+                            type='url'
+                            name='website'
+                            id='website'
+                            autocomplete='url'
+                            class='global-input'
+                        />
+                    </FormField>
+                    <FormField labelFor='message' labelText='Message'>
+                        <textarea
+                            id='message'
+                            name='message'
+                            rows='4'
+                            class='global-input'
+                            required></textarea>
+                    </FormField>
+                </div>
+                <button type='submit' class='global-button mx-auto mt-8 block'
+                    >Send message</button
+                >
+            </form>
+        </div>
+    </div>
+</BaseLayout>

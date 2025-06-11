@@ -2,7 +2,6 @@
 import { Content as BioText } from '@/pages/_bio.md'
 
 import BaseLayout from '@/layouts/BaseLayout.astro'
-import ContactBtn from '@/components/ContactBtn.astro'
 import PageHeader from '@/components/PageHeader.astro'
 import SideProfileImage from '@/components/SideProfileImage.astro'
 
@@ -10,19 +9,22 @@ const pageTitle = 'Home'
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-    <div>
-        <PageHeader title='Armando Borge' />
-        <div class='grid gap-8 lg:grid-cols-[auto_1fr]'>
-            <SideProfileImage />
-            <div
-                class='prose prose-a:text-ajna text-yang dark:text-yin w-full max-w-none md:columns-2'
+    <PageHeader title='Armando Borge' />
+    <div class='grid gap-10 lg:grid-cols-[auto_1fr]'>
+        <SideProfileImage />
+        <div
+            class='prose prose-a:text-ajna text-yang dark:text-yin w-full max-w-none md:columns-2'
+        >
+            <BioText />
+        </div>
+        <div class='hidden lg:block'></div>
+        <div class='md:pl-[50%]'>
+            <a class='global-button' href='/contact'
+                >Let's work together <span
+                    aria-hidden='true'
+                    class='inline-block rotate-[-45deg]'>→</span
+                ></a
             >
-                <BioText />
-            </div>
-            <div class='hidden lg:block'></div>
-            <div class='md:pl-[50%]'>
-                <ContactBtn />
-            </div>
         </div>
     </div>
 </BaseLayout>

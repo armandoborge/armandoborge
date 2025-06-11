@@ -23,6 +23,20 @@
     --font-inter: 'Inter', 'sans-serif';
 
     --color-yang: oklch(0.21 0 0);
-    --color-yin: oklch(94.78% 0.002 108.65);
+    --color-yin: oklch(0.985 0 89.876);
     --color-ajna: oklch(0.647 0.101 203.471);
+}
+
+@layer components {
+    .global-button {
+        @apply hover:bg-ajna bg-yang dark:text-yang text-yin hover:text-yin dark:bg-yin inline-block cursor-pointer rounded-sm px-4 py-2 font-medium;
+    }
+
+    .global-button-small {
+        @apply hover:bg-ajna bg-yang dark:text-yang text-yin hover:text-yin dark:bg-yin mt-4 inline-block rounded-sm px-4 py-1 text-xs font-medium;
+    }
+
+    .global-input {
+        @apply border-yang/50 dark:border-yin/50 block w-full rounded-sm border-1 border-dotted px-2 py-2 text-base outline-gray-300 focus:outline-hidden;
+    }
 }
