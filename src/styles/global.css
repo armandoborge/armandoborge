@@ -22,7 +22,7 @@
 @theme {
     --font-inter: 'Inter', 'sans-serif';
 
-    --color-black: oklch(0.21 0 0);
-    --color-white: oklch(94.78% 0.002 108.65);
-    --color-red: oklch(0.68 0.2 36.34);
+    --color-yang: oklch(0.21 0 0);
+    --color-yin: oklch(94.78% 0.002 108.65);
+    --color-ajna: oklch(0.647 0.101 203.471);
 }

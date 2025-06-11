@@ -10,7 +10,7 @@ const menuItems = [
 ]
 ---
 
-<header class='sticky top-0 z-10 bg-white dark:bg-black'>
+<header class='dark:bg-yang bg-yin sticky top-0 z-10'>
     <nav
         class='mx-auto flex w-full max-w-7xl items-center justify-between px-4 pt-8 pb-2 md:px-10 lg:px-14'
         aria-label='Global'
@@ -21,7 +21,7 @@ const menuItems = [
             <button
                 id='openMenu'
                 type='button'
-                class='hover:text-red inline-flex cursor-pointer items-center justify-center p-1.5 text-black dark:text-white'
+                class='hover:text-ajna text-yang dark:text-yin inline-flex cursor-pointer items-center justify-center p-1.5'
             >
                 <span class='sr-only'>Open main menu</span>
                 <svg
@@ -44,7 +44,7 @@ const menuItems = [
         <div class='hidden text-sm/6 font-medium md:flex md:gap-x-12'>
             {
                 menuItems.map(({ url, label }) => (
-                    <a href={url} class='hover:text-red'>
+                    <a href={url} class='hover:text-ajna'>
                         {label}
                     </a>
                 ))
@@ -56,7 +56,7 @@ const menuItems = [
     <!-- Mobile Menu (hidden by default) -->
     <div
         id='mobileMenu'
-        class='fixed inset-0 z-50 hidden bg-white md:hidden dark:bg-black'
+        class='dark:bg-yang bg-yin fixed inset-0 z-50 hidden md:hidden'
         role='dialog'
         aria-modal='true'
     >
@@ -70,7 +70,7 @@ const menuItems = [
                 <button
                     id='closeMenu'
                     type='button'
-                    class='hover:text-red cursor-pointer p-1.5'
+                    class='hover:text-ajna cursor-pointer p-1.5'
                 >
                     <span class='sr-only'>Close menu</span>
                     <svg
@@ -92,7 +92,7 @@ const menuItems = [
                 <div class='space-y-8 py-12 text-center text-2xl font-medium'>
                     {
                         menuItems.map(({ url, label }) => (
-                            <a href={url} class='hover:text-red block py-2'>
+                            <a href={url} class='hover:text-ajna block py-2'>
                                 {label}
                             </a>
                         ))
