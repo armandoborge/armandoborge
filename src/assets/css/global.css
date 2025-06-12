@@ -29,7 +29,7 @@
 
 @layer components {
     .global-button {
-        @apply hover:bg-ajna bg-yang dark:text-yang text-yin hover:text-yin dark:bg-yin hover:outline-ajna inline-block cursor-pointer rounded-sm px-4 py-2 font-medium outline-1 outline-offset-1 outline-transparent outline-dotted;
+        @apply hover:bg-ajna bg-yang dark:text-yang text-yin hover:text-yin dark:bg-yin hover:outline-ajna inline-block cursor-pointer rounded-sm px-3 py-1.5 font-medium outline-1 outline-offset-1 outline-transparent outline-dotted;
     }
 
     .global-button-small {
