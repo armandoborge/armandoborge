@@ -1,6 +1,6 @@
 ---
 import { Image } from 'astro:assets'
-import ProfilePicture from '@/img/ab.png'
+import ProfilePicture from '@/img/ab.jpg'
 import PageTitle from '@/components/PageTitle.astro'
 
 const { title, showImage = true } = Astro.props
@@ -8,14 +8,17 @@ const { title, showImage = true } = Astro.props
 
 {
     showImage && (
-        <Image
-            src={ProfilePicture}
-            alt='Armando Borge ~ Personal Website'
-            class='shadow-yang mx-auto mt-20 block size-40 rotate-[-15deg] rounded-sm brightness-105 grayscale-75 md:mx-0 md:size-48 lg:hidden'
-            width={200}
-            height={200}
-            densities={[2]}
-        />
+        <div class='border-ajna relative isolate mx-auto mt-20 block size-40 rotate-[-15deg] overflow-hidden rounded-sm border-1 border-dotted md:mx-0 lg:hidden'>
+            <Image
+                src={ProfilePicture}
+                alt='Armando Borge'
+                class='absolute inset-0 -z-10 rounded-sm object-cover p-0.5'
+                width={158}
+                height={158}
+                densities={[2]}
+            />
+            <div class='bg-yin/20 dark:bg-yang/20 absolute inset-0 -z-10' />
+        </div>
     )
 }
 

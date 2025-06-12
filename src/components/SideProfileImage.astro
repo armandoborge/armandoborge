@@ -1,13 +1,22 @@
 ---
 import { Image } from 'astro:assets'
-import ProfilePicture from '@/img/ab.png'
+import ProfilePicture from '@/img/concon.jpg'
 ---
 
-<Image
-    src={ProfilePicture}
-    alt='Armando Borge ~ Personal Website'
-    class='shadow-yang mx-auto my-10 mr-10 hidden rotate-[-15deg] rounded-sm brightness-105 grayscale-75 lg:block'
-    width={200}
-    height={200}
-    densities={[2]}
-/>
+<div
+    class='border-ajna relative isolate mt-2 mr-2 hidden h-[380px] w-[220px] rotate-[-0deg] overflow-hidden rounded-sm border-1 border-dotted lg:block'
+>
+    <p
+        class='text-yin absolute right-0 bottom-0 z-10 w-full p-2 text-xs font-medium italic'
+    >
+        Concón Dunes, Chile
+    </p>
+    <Image
+        src={ProfilePicture}
+        alt='Armando Borge'
+        class='absolute inset-0 -z-10 size-full rounded-sm object-cover p-0.5'
+        width={1000}
+        densities={[2]}
+    />
+    <div class='bg-yin/20 dark:bg-yang/20 absolute inset-0 -z-10'></div>
+</div>
