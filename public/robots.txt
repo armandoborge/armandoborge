@@ -26,6 +26,9 @@ Disallow:
 User-agent: SeznamBot
 Disallow:
 
+User-agent: Applebot
+Disallow:
+
 # Allow social media bots
 User-agent: facebookexternalhit
 Disallow:
@@ -62,9 +65,6 @@ User-agent: CCBot
 Disallow: /
 
 User-agent: PetalBot
-Disallow: /
-
-User-agent: Applebot
 Disallow: /
 
 # Block all other unknown or generic bots
