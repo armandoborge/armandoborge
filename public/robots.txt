@@ -1,0 +1,75 @@
+# Allow major search engines
+User-agent: Googlebot
+Disallow:
+
+User-agent: Bingbot
+Disallow:
+
+User-agent: Slurp
+Disallow:
+
+User-agent: DuckDuckBot
+Disallow:
+
+User-agent: Baiduspider
+Disallow:
+
+User-agent: YandexBot
+Disallow:
+
+User-agent: Sogou web spider
+Disallow:
+
+User-agent: Exabot
+Disallow:
+
+User-agent: SeznamBot
+Disallow:
+
+# Allow social media bots
+User-agent: facebookexternalhit
+Disallow:
+
+User-agent: Facebot
+Disallow:
+
+User-agent: Twitterbot
+Disallow:
+
+User-agent: LinkedInBot
+Disallow:
+
+User-agent: Pinterestbot
+Disallow:
+
+# Block known scrapers & SEO tools
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
+
+User-agent: BLEXBot
+Disallow: /
+
+User-agent: CCBot
+Disallow: /
+
+User-agent: PetalBot
+Disallow: /
+
+User-agent: Applebot
+Disallow: /
+
+# Block all other unknown or generic bots
+User-agent: *
+Disallow: /
+
+# Sitemap
+Sitemap: https://www.armandoborge.com/sitemap-index.xml
