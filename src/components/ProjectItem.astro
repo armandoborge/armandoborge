@@ -6,7 +6,7 @@ const { name, year, description, image, url } = project
 ---
 
 <article
-    class='group dark:text-yin border-ajna/40 hover:border-ajna relative isolate flex max-h-200 flex-col justify-between gap-80 overflow-hidden rounded-sm border-[1px] border-dotted p-4'
+    class='group dark:text-yin border-ajna/40 hover:border-ajna relative isolate flex max-h-150 flex-col justify-between gap-60 overflow-hidden rounded-sm border-[1px] border-dotted p-4'
 >
     <Image
         src={image}
@@ -16,7 +16,7 @@ const { name, year, description, image, url } = project
         class='absolute inset-0 -z-10 size-full rounded-sm object-cover p-0.5 grayscale-50'
     />
     <div
-        class='group-hover:bg-yin/60 bg-yin/80 dark:group-hover:bg-yang/70 dark:bg-yang/90 absolute inset-0 -z-10 duration-300'
+        class='group-hover:bg-yin/80 bg-yin/60 dark:group-hover:bg-yang/80 dark:bg-yang/60 absolute inset-0 -z-10 duration-300'
     >
     </div>
     <div class='relative'>
@@ -24,13 +24,13 @@ const { name, year, description, image, url } = project
             <time datetime={year.toString()}>{year}</time>
         </p>
         <h2
-            class='mt-1 flex items-start justify-between gap-4 text-2xl font-light text-balance capitalize md:text-3xl lg:text-4xl'
+            class='mt-1 flex items-start justify-between gap-4 text-2xl font-medium text-balance capitalize md:text-3xl'
         >
             {name}
         </h2>
     </div>
     <div class='flex flex-col gap-1'>
-        <p class='mt-2 text-base text-balance leading-relaxed'>
+        <p class='mt-2 text-sm text-balance leading-relaxed'>
             {description}
         </p>
         <a

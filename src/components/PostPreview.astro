@@ -1,0 +1,20 @@
+---
+const { title, url, date, description, author, tags = [] } = Astro.props
+const formattedDate = new Date(date).toLocaleDateString('en-US', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+})
+---
+
+<article
+    class='group mb-10 outline-1 outline-offset-[8px] outline-transparent outline-dotted hover:outline-ajna rounded-xs'
+>
+    <a href={url} class='block'>
+        <div class='mb-1.5 flex flex-wrap items-center gap-2 text-xs font-medium uppercase'>
+            <time datetime={date.toString()}>{formattedDate}</time>
+        </div>
+        <h3 class='text-xl font-medium capitalize group-hover:text-ajna mb-2 border-b-1 border-dotted pb-2 border-yang/50 dark:border-yin/50'>{title}</h3>
+        <p class='leading-relaxed text-sm'>{description}</p>
+    </a>
+</article>

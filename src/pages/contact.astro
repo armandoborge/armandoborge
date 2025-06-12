@@ -7,20 +7,20 @@ const pageTitle = 'Contact'
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-    <div class='mx-auto max-w-lg'>
-        <div class='mb-12 text-center'>
-            <PageTitle title={pageTitle} />
-            <div>
-                <h2 class='text-ajna mb-1 text-base font-medium md:text-lg'>
-                    Let's talk about your project
-                </h2>
-                <p class='leading-loose'>
-                    I am actively seeking innovative and ambitious projects. If
-                    you have a compelling idea and need a business partner to
-                    bring it to life, I welcome the opportunity to collaborate.
-                </p>
-            </div>
+    <header class='mb-12 text-left sm:text-center sm:max-w-xl mx-auto'>
+        <PageTitle title={pageTitle} />
+        <div class='leading-relaxed'>
+            <h2 class='text-ajna mb-1 text-base font-medium md:text-lg'>
+                Let's talk about your project
+            </h2>
+            <p>
+                I am actively seeking innovative and ambitious projects. If
+                you have a compelling idea and need a business partner to
+                bring it to life, I welcome the opportunity to collaborate.
+            </p>
         </div>
+    </header>
+    <div class='mx-auto sm:max-w-md'>
         <div
             class='mx-auto flex w-full flex-col gap-16 sm:gap-y-20 lg:flex-row'
         >
