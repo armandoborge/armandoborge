@@ -1,7 +1,9 @@
 ---
 import Logo from '@/components/Logo.astro'
 import ThemeToggle from '@/components/ThemeToggle.astro'
+import * as path from 'node:path'
 
+const { pathname } = Astro.url
 const menuItems = [
     { url: '/blog', label: 'Blog' },
     { url: '/work', label: 'Work' },
@@ -49,11 +51,21 @@ const menuItems = [
         <!-- Desktop Menu -->
         <div class='hidden text-sm/6 font-medium md:flex md:gap-x-12'>
             {
-                menuItems.map(({ url, label, ...rest }) => (
-                    <a href={url} class='hover:text-ajna' {...rest}>
-                        {label}
-                    </a>
-                ))
+                menuItems.map(({ url, label, ...rest }) => {
+                    let cssClass = 'hover:text-ajna'
+                    if (
+                        pathname === url ||
+                        (url === '/blog' && pathname.startsWith('/blog/'))
+                    ) {
+                        cssClass = 'text-ajna font-bold'
+                    }
+
+                    return (
+                        <a href={url} class={cssClass} {...rest}>
+                            {label}
+                        </a>
+                    )
+                })
             }
             <ThemeToggle />
         </div>
@@ -97,11 +109,23 @@ const menuItems = [
             <div class='mt-6 flow-root'>
                 <div class='space-y-6 py-12 text-center text-lg font-medium'>
                     {
-                        menuItems.map(({ url, label }) => (
-                            <a href={url} class='hover:text-ajna block py-2'>
-                                {label}
-                            </a>
-                        ))
+                        menuItems.map(({ url, label, ...rest }) => {
+                            let cssClass = 'hover:text-ajna block py-2'
+                            if (
+                                pathname === url ||
+                                (url === '/blog' &&
+                                    pathname.startsWith('/blog/'))
+                            ) {
+                                cssClass =
+                                    'hover:text-ajna block py-2 text-ajna font-bold'
+                            }
+
+                            return (
+                                <a href={url} class={cssClass}  {...rest}>
+                                    {label}
+                                </a>
+                            )
+                        })
                     }
                     <div class='grid justify-center'>
                         <ThemeToggle />
