@@ -33,7 +33,7 @@
     }
 
     .global-button-small {
-        @apply hover:bg-ajna bg-yang dark:text-yang text-yin hover:text-yin dark:bg-yin hover:outline-ajna mt-4 inline-block rounded-sm px-4 py-1 text-xs font-medium outline-1 outline-offset-1 outline-transparent outline-dotted;
+        @apply hover:bg-ajna bg-yang dark:text-yang text-yin hover:text-yin dark:bg-yin hover:outline-ajna inline-block rounded-sm px-4 py-1 text-xs font-medium outline-1 outline-offset-1 outline-transparent outline-dotted;
     }
 
     .global-input {

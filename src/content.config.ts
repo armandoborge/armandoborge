@@ -9,13 +9,15 @@ export const collections = {
         }),
         schema: z.object({
             title: z.string(),
-            pubDate: z.date(),
+            date: z.date(),
             description: z.string(),
             author: z.string(),
-            image: z.object({
-                url: z.string(),
-                alt: z.string(),
-            }),
+            image: z
+                .object({
+                    url: z.string(),
+                    alt: z.string(),
+                })
+                .optional(),
             tags: z.array(z.string()),
         }),
     }),

@@ -9,13 +9,13 @@ export async function GET(context) {
         description: 'Armando Borge Personal Website',
         site: context.site,
         items: posts.map((post) => {
-            const { id, title, description, pubDate } = post.data
+            const { id, title, description, date } = post.data
 
             return {
                 title: title,
-                pubDate: pubDate,
+                date: date,
                 description: description,
-                link: `/posts/${id}/`,
+                link: `/blog/${id}/`,
             }
         }),
         customData: `<language>en-us</language>`,
