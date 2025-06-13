@@ -2,14 +2,14 @@
 import { Content as BioText } from '@/pages/_bio.md'
 
 import BaseLayout from '@/layouts/BaseLayout.astro'
-import PageHeader from '@/components/PageHeader.astro'
+import Header from '@/components/Header.astro'
 import SideProfileImage from '@/components/SideProfileImage.astro'
 
 const pageTitle = 'Home'
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-    <PageHeader title='Armando Borge' />
+    <Header title='Armando Borge' />
     <div class='grid gap-10 lg:grid-cols-[auto_1fr]'>
         <SideProfileImage />
         <div

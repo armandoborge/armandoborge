@@ -1,142 +1,27 @@
 ---
-import Logo from '@/components/Logo.astro'
-import ThemeToggle from '@/components/ThemeToggle.astro'
-import * as path from 'node:path'
+import { Image } from 'astro:assets'
+import ProfilePicture from '@/img/ab.jpg'
+import Title from '@/components/Title.astro'
 
-const { pathname } = Astro.url
-const menuItems = [
-    { url: '/blog', label: 'Blog' },
-    { url: '/work', label: 'Work' },
-    { url: '/projects', label: 'Projects' },
-    { url: '/contact', label: 'Contact' },
-    {
-        url: 'https://travels.armandoborge.com',
-        label: 'Travels',
-        target: '_blank',
-        rel: 'noopener noreferrer',
-    },
-]
+const { title, showImage = true } = Astro.props
 ---
 
-<header class='dark:bg-yang bg-yin sticky top-0 z-10'>
-    <nav
-        class='mx-auto flex w-full max-w-7xl items-center justify-between px-4 pt-8 pb-2 md:px-10 lg:px-14'
-        aria-label='Global'
-    >
-        <Logo />
-        <!-- Open mobile menu button -->
-        <div class='flex md:hidden'>
-            <button
-                id='openMenu'
-                type='button'
-                class='hover:text-ajna text-yang dark:text-yin inline-flex cursor-pointer items-center justify-center p-1.5'
-            >
-                <span class='sr-only'>Open main menu</span>
-                <svg
-                    class='size-7'
-                    fill='none'
-                    viewBox='0 0 24 24'
-                    stroke-width='1.2'
-                    stroke='currentColor'
-                    aria-hidden='true'
-                >
-                    <path
-                        stroke-linecap='round'
-                        stroke-linejoin='round'
-                        d='M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5'></path>
-                </svg>
-            </button>
+{
+    showImage && (
+        <div class='border-ajna relative isolate mx-auto mt-12 block size-40 rotate-[-15deg] overflow-hidden rounded-sm border-1 border-dotted md:mx-0 md:mt-20 lg:hidden'>
+            <Image
+                src={ProfilePicture}
+                alt='Armando Borge'
+                class='absolute inset-0 -z-10 rounded-sm object-cover p-0.5'
+                width={158}
+                height={158}
+                densities={[2]}
+            />
+            <div class='bg-yin/20 dark:bg-yang/20 absolute inset-0 -z-10' />
         </div>
+    )
+}
 
-        <!-- Desktop Menu -->
-        <div class='hidden text-sm/6 font-medium md:flex md:gap-x-12'>
-            {
-                menuItems.map(({ url, label, ...rest }) => {
-                    let cssClass = 'hover:text-ajna'
-                    if (pathname === url || (url === '/blog' && pathname.startsWith('/blog/'))) {
-                        cssClass = 'text-ajna font-bold'
-                    }
-
-                    return (
-                        <a href={url} class={cssClass} {...rest}>
-                            {label}
-                        </a>
-                    )
-                })
-            }
-            <ThemeToggle />
-        </div>
-    </nav>
-
-    <!-- Mobile Menu (hidden by default) -->
-    <div
-        id='mobileMenu'
-        class='dark:bg-yang bg-yin fixed inset-0 z-50 hidden md:hidden'
-        role='dialog'
-        aria-modal='true'
-    >
-        <!-- Slide-over Menu -->
-        <div class='fixed inset-y-0 right-0 z-50 w-full overflow-y-auto px-4 pt-8 pb-2 md:px-10'>
-            <div class='flex items-center justify-between'>
-                <Logo />
-                <!-- Close Mobile Menu Button -->
-                <button id='closeMenu' type='button' class='hover:text-ajna cursor-pointer p-1.5'>
-                    <span class='sr-only'>Close menu</span>
-                    <svg
-                        class='size-7'
-                        fill='none'
-                        viewBox='0 0 24 24'
-                        stroke-width='1.2'
-                        stroke='currentColor'
-                        aria-hidden='true'
-                    >
-                        <path stroke-linecap='round' stroke-linejoin='round' d='M6 18 18 6M6 6l12 12'></path>
-                    </svg>
-                </button>
-            </div>
-            <div class='mt-6 flow-root'>
-                <div class='space-y-6 py-12 text-center text-lg font-medium'>
-                    {
-                        menuItems.map(({ url, label, ...rest }) => {
-                            let cssClass = 'hover:text-ajna block py-2'
-                            if (pathname === url || (url === '/blog' && pathname.startsWith('/blog/'))) {
-                                cssClass = 'hover:text-ajna block py-2 text-ajna font-bold'
-                            }
-
-                            return (
-                                <a href={url} class={cssClass} {...rest}>
-                                    {label}
-                                </a>
-                            )
-                        })
-                    }
-                    <div class='grid justify-center'>
-                        <ThemeToggle />
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</header>
-
-<!-- JavaScript to toggle menu -->
-<script>
-    const openBtn = document.getElementById('openMenu')
-    const closeBtn = document.getElementById('closeMenu')
-    const menuContainer = document.getElementById('mobileMenu')
-
-    openBtn?.addEventListener('click', () => {
-        menuContainer?.classList.remove('hidden')
-    })
-
-    closeBtn?.addEventListener('click', () => {
-        menuContainer?.classList.add('hidden')
-    })
-
-    // Optional: Close menu if user clicks on the backdrop
-    menuContainer?.addEventListener('click', (e) => {
-        if (e.target === menuContainer) {
-            menuContainer.classList.add('hidden')
-        }
-    })
-</script>
+<div class='mb-12 text-center md:text-left'>
+    <Title title={title} />
+</div>

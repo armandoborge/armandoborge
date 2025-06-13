@@ -1,7 +1,7 @@
 ---
 import WorkItem from '@/components/WorkItem.astro'
 import BaseLayout from '@/layouts/BaseLayout.astro'
-import PageHeader from '@/components/PageHeader.astro'
+import Header from '@/components/Header.astro'
 import SideProfileImage from '@/components/SideProfileImage.astro'
 
 const pageTitle = 'Work'
@@ -88,7 +88,7 @@ const positions = [
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-    <PageHeader title='Work Experience' />
+    <Header title='Work Experience' />
     <div class='grid gap-10 lg:grid-cols-[auto_1fr]'>
         <SideProfileImage />
         <div class='space-y-16'>

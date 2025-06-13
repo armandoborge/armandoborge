@@ -1,6 +1,6 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro'
-import PageTitle from '@/components/PageTitle.astro'
+import Title from '@/components/Title.astro'
 
 const { date, title, author, tags = [], description } = Astro.props.frontmatter
 const formattedDate = new Date(date).toLocaleDateString('en-US', {
@@ -12,7 +12,7 @@ const formattedDate = new Date(date).toLocaleDateString('en-US', {
 
 <BaseLayout pageTitle={title}>
     <header class='mb-12 md:mb-20 lg:text-center'>
-        <PageTitle title={title} />
+        <Title title={title} />
         <div class='mb-4 flex flex-wrap items-center gap-2 text-sm lg:justify-center'>
             <time datetime={date.toString()}>{formattedDate}</time>
             <span>•</span>

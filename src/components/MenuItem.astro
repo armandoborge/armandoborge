@@ -1,0 +1,15 @@
+---
+const { pathname } = Astro.url
+const { link, cssInactive, cssActive } = Astro.props
+const { url, label, ...rest } = link
+
+let cssClass = cssInactive
+
+if (pathname === url || (url === '/blog' && pathname.startsWith('/blog/'))) {
+    cssClass = cssActive
+}
+---
+
+<a href={url} class={cssClass} {...rest}>
+    {label}
+</a>

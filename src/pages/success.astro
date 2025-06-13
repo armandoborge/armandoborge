@@ -1,6 +1,6 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro'
-import PageTitle from '@/components/PageTitle.astro'
+import Title from '@/components/Title.astro'
 
 const pageTitle = 'Message received'
 ---
@@ -8,7 +8,7 @@ const pageTitle = 'Message received'
 <BaseLayout pageTitle={pageTitle}>
     <div class='mx-auto max-w-2xl'>
         <div class='mb-12 text-center'>
-            <PageTitle title='Thank You' />
+            <Title title='Thank You' />
             <div>
                 <h2 class='text-ajna mb-1 text-base font-medium md:text-lg'>Your message has been received.</h2>
                 <p class='mb-12 leading-loose'>

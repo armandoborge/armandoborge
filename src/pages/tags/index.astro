@@ -2,7 +2,7 @@
 import { getCollection } from 'astro:content'
 
 import BaseLayout from '@/layouts/BaseLayout.astro'
-import PageTitle from '@/components/PageTitle.astro'
+import Title from '@/components/Title.astro'
 
 const allPosts = await getCollection('blog')
 const tags = [...new Set(allPosts.map((post) => post.data.tags).flat())]
@@ -11,7 +11,7 @@ const pageTitle = 'Tags'
 
 <BaseLayout pageTitle={pageTitle}>
     <div class='mb-12'>
-        <PageTitle title='Tags' />
+        <Title title='Tags' />
     </div>
     <div class='dark:divide-yin/80 divide-yang mx-auto grid gap-2 divide-y'>
         {

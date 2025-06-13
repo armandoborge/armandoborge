@@ -2,7 +2,7 @@
 import { getCollection } from 'astro:content'
 
 import BaseLayout from '@/layouts/BaseLayout.astro'
-import PageTitle from '@/components/PageTitle.astro'
+import Title from '@/components/Title.astro'
 import PostPreview from '@/components/PostPreview.astro'
 
 export async function getStaticPaths() {
@@ -25,7 +25,7 @@ const { posts } = Astro.props
 
 <BaseLayout pageTitle={tag}>
     <header class='mx-auto mb-12 text-left sm:max-w-xl sm:text-center'>
-        <PageTitle title={`#${tag}`} />
+        <Title title={`#${tag}`} />
     </header>
     <section class='mx-auto lg:max-w-3xl'>
         {

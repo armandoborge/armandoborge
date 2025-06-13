@@ -2,7 +2,7 @@
 import { getCollection } from 'astro:content'
 
 import BaseLayout from '@/layouts/BaseLayout.astro'
-import PageTitle from '@/components/PageTitle.astro'
+import Title from '@/components/Title.astro'
 import PostPreview from '@/components/PostPreview.astro'
 
 // Get all posts and sort by date (newest first)
@@ -12,7 +12,7 @@ const pageTitle = 'Blog'
 
 <BaseLayout pageTitle={pageTitle}>
     <header class='mx-auto mb-12 text-left sm:max-w-xl sm:text-center'>
-        <PageTitle title='Blog Posts' />
+        <Title title='Blog Posts' />
         <div class='leading-relaxed'>
             <p>Thoughts, stories, and ideas about web development, programming, and technology.</p>
         </div>

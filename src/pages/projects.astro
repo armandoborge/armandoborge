@@ -6,7 +6,7 @@ import jaguarImage from '@/img/jaguar.jpg'
 import womanImage from '@/img/woman.jpg'
 
 import BaseLayout from '@/layouts/BaseLayout.astro'
-import PageHeader from '@/components/PageHeader.astro'
+import Header from '@/components/Header.astro'
 import ProjectItem from '@/components/ProjectItem.astro'
 
 const pageTitle = 'Projects'
@@ -55,7 +55,7 @@ const projects = [
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-    <PageHeader title='Projects' showImage={false} />
+    <Header title='Projects' showImage={false} />
     <div class='grid gap-6 md:grid-cols-2 xl:grid-cols-3'>
         {projects.map((project) => <ProjectItem project={project} />)}
     </div>
