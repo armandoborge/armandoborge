@@ -1,14 +1,6 @@
 ---
 const currentYear = new Date().getFullYear()
-const {
-    roleName,
-    companyName,
-    companyCountry,
-    fromYear,
-    toYear = currentYear,
-    description,
-    url,
-} = Astro.props
+const { roleName, companyName, companyCountry, fromYear, toYear = currentYear, description, url } = Astro.props
 ---
 
 <div>
@@ -31,10 +23,5 @@ const {
     <p class='text-sm leading-relaxed'>
         {description}
     </p>
-    <a
-        href={url}
-        class='global-button-small mt-4'
-        target='_blank'
-        rel='noopener noreferrer'>{url}</a
-    >
+    <a href={url} class='global-button-small mt-4' target='_blank' rel='noopener noreferrer'>{url}</a>
 </div>

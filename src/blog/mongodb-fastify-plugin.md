@@ -212,19 +212,11 @@ fastify.post('/transfer', async (request, reply) => {
 
         await request.db
             .collection('accounts')
-            .updateOne(
-                { _id: fromAccount },
-                { $inc: { balance: -amount } },
-                { session }
-            )
+            .updateOne({ _id: fromAccount }, { $inc: { balance: -amount } }, { session })
 
         await request.db
             .collection('accounts')
-            .updateOne(
-                { _id: toAccount },
-                { $inc: { balance: amount } },
-                { session }
-            )
+            .updateOne({ _id: toAccount }, { $inc: { balance: amount } }, { session })
 
         await session.commitTransaction()
         return { success: true }

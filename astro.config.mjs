@@ -17,4 +17,13 @@ export default defineConfig({
             filter: (page) => page !== 'https://www.armandoborge.com/success',
         }),
     ],
+    markdown: {
+        shikiConfig: {
+            themes: {
+                light: 'catppuccin-latte',
+                dark: 'nord',
+            },
+            wrap: true,
+        },
+    },
 })

@@ -13,9 +13,7 @@ const formattedDate = new Date(date).toLocaleDateString('en-US', {
 <BaseLayout pageTitle={title}>
     <header class='mb-12 md:mb-20 lg:text-center'>
         <PageTitle title={title} />
-        <div
-            class='mb-4 flex flex-wrap items-center gap-2 text-sm lg:justify-center'
-        >
+        <div class='mb-4 flex flex-wrap items-center gap-2 text-sm lg:justify-center'>
             <time datetime={date.toString()}>{formattedDate}</time>
             <span>•</span>
             <span class='text-ajna'>By {author}</span>
@@ -33,9 +31,7 @@ const formattedDate = new Date(date).toLocaleDateString('en-US', {
         }
     </header>
     <article class='mx-auto lg:max-w-3xl'>
-        <p
-            class='border-ajna bg-ajna/10 mb-8 rounded-sm border-1 border-dotted p-4 text-base italic'
-        >
+        <p class='border-ajna bg-ajna/10 mb-8 rounded-sm border-1 border-dotted p-4 text-base italic'>
             <span class='text-ajna font-medium'>In this article:</span>
             {description}
         </p>
@@ -46,10 +42,7 @@ const formattedDate = new Date(date).toLocaleDateString('en-US', {
         </div>
         <footer class='border-yang/20 dark:border-yin/20 mt-12 border-t pt-6'>
             <div class='flex items-center justify-between'>
-                <a
-                    href='/blog'
-                    class='text-ajna inline-flex items-center text-sm hover:underline'
-                >
+                <a href='/blog' class='text-ajna inline-flex items-center text-sm hover:underline'>
                     <svg
                         xmlns='http://www.w3.org/2000/svg'
                         class='mr-1 h-4 w-4'
@@ -57,11 +50,8 @@ const formattedDate = new Date(date).toLocaleDateString('en-US', {
                         viewBox='0 0 24 24'
                         stroke='currentColor'
                     >
-                        <path
-                            stroke-linecap='round'
-                            stroke-linejoin='round'
-                            stroke-width='2'
-                            d='M15 19l-7-7 7-7'></path>
+                        <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M15 19l-7-7 7-7'
+                        ></path>
                     </svg>
                     Back to all posts
                 </a>

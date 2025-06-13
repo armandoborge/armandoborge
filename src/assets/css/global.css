@@ -15,8 +15,7 @@
     font-style: italic;
     font-weight: 100 900;
     font-display: swap;
-    src: url('/fonts/Inter-Italic-VariableFont_opsz,wght.ttf')
-        format('truetype');
+    src: url('/fonts/Inter-Italic-VariableFont_opsz,wght.ttf') format('truetype');
 }
 
 @theme {
@@ -38,5 +37,17 @@
 
     .global-input {
         @apply border-yang/50 dark:border-yin/50 focus:border-ajna focus:outline-ajna block w-full rounded-sm border-1 border-dotted px-2 py-2 text-base outline-1 outline-offset-1 outline-transparent outline-dotted;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    html.dark .astro-code,
+    html.dark .astro-code span {
+        color: var(--shiki-dark) !important;
+        background-color: var(--shiki-dark-bg) !important;
+        /* Optional, if you also want font styles */
+        font-style: var(--shiki-dark-font-style) !important;
+        font-weight: var(--shiki-dark-font-weight) !important;
+        text-decoration: var(--shiki-dark-text-decoration) !important;
     }
 }

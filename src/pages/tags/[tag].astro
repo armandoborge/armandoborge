@@ -7,14 +7,10 @@ import PostPreview from '@/components/PostPreview.astro'
 
 export async function getStaticPaths() {
     const allPosts = await getCollection('blog')
-    const uniqueTags = [
-        ...new Set(allPosts.map((post) => post.data.tags).flat()),
-    ]
+    const uniqueTags = [...new Set(allPosts.map((post) => post.data.tags).flat())]
 
     return uniqueTags.map((tag) => {
-        const filteredPosts = allPosts.filter((post) =>
-            post.data.tags.includes(tag)
-        )
+        const filteredPosts = allPosts.filter((post) => post.data.tags.includes(tag))
 
         return {
             params: { tag },
@@ -28,7 +24,7 @@ const { posts } = Astro.props
 ---
 
 <BaseLayout pageTitle={tag}>
-    <header class='mb-12 text-left sm:text-center sm:max-w-xl mx-auto'>
+    <header class='mx-auto mb-12 text-left sm:max-w-xl sm:text-center'>
         <PageTitle title={`#${tag}`} />
     </header>
     <section class='mx-auto lg:max-w-3xl'>

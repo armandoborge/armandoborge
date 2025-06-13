@@ -13,7 +13,13 @@ const pageTitle = 'Tags'
     <div class='mb-12'>
         <PageTitle title='Tags' />
     </div>
-    <div class='mx-auto grid gap-2 divide-y dark:divide-yin/80 divide-yang'>
-        {tags.map((tag) => <a href={`/tags/${tag}`} class="py-4 hover:text-ajna">#{tag}</a>)}
+    <div class='dark:divide-yin/80 divide-yang mx-auto grid gap-2 divide-y'>
+        {
+            tags.map((tag) => (
+                <a href={`/tags/${tag}`} class='hover:text-ajna py-4'>
+                    #{tag}
+                </a>
+            ))
+        }
     </div>
 </BaseLayout>

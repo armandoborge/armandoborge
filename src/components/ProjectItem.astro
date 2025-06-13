@@ -30,16 +30,10 @@ const { name, year, description, image, url } = project
         </h2>
     </div>
     <div class='flex flex-col gap-1'>
-        <p class='mt-2 text-sm text-balance leading-relaxed'>
+        <p class='mt-2 text-sm leading-relaxed text-balance'>
             {description}
         </p>
-        <a
-            href={url}
-            title={name}
-            target='_blank'
-            rel='noopener noreferrer'
-            class='text-sm font-medium'
-        >
+        <a href={url} title={name} target='_blank' rel='noopener noreferrer' class='text-sm font-medium'>
             <span class='absolute inset-0'></span>
             {url}
         </a>

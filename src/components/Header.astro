@@ -53,10 +53,7 @@ const menuItems = [
             {
                 menuItems.map(({ url, label, ...rest }) => {
                     let cssClass = 'hover:text-ajna'
-                    if (
-                        pathname === url ||
-                        (url === '/blog' && pathname.startsWith('/blog/'))
-                    ) {
+                    if (pathname === url || (url === '/blog' && pathname.startsWith('/blog/'))) {
                         cssClass = 'text-ajna font-bold'
                     }
 
@@ -79,17 +76,11 @@ const menuItems = [
         aria-modal='true'
     >
         <!-- Slide-over Menu -->
-        <div
-            class='fixed inset-y-0 right-0 z-50 w-full overflow-y-auto px-4 pt-8 pb-2 md:px-10'
-        >
+        <div class='fixed inset-y-0 right-0 z-50 w-full overflow-y-auto px-4 pt-8 pb-2 md:px-10'>
             <div class='flex items-center justify-between'>
                 <Logo />
                 <!-- Close Mobile Menu Button -->
-                <button
-                    id='closeMenu'
-                    type='button'
-                    class='hover:text-ajna cursor-pointer p-1.5'
-                >
+                <button id='closeMenu' type='button' class='hover:text-ajna cursor-pointer p-1.5'>
                     <span class='sr-only'>Close menu</span>
                     <svg
                         class='size-7'
@@ -99,10 +90,7 @@ const menuItems = [
                         stroke='currentColor'
                         aria-hidden='true'
                     >
-                        <path
-                            stroke-linecap='round'
-                            stroke-linejoin='round'
-                            d='M6 18 18 6M6 6l12 12'></path>
+                        <path stroke-linecap='round' stroke-linejoin='round' d='M6 18 18 6M6 6l12 12'></path>
                     </svg>
                 </button>
             </div>
@@ -111,17 +99,12 @@ const menuItems = [
                     {
                         menuItems.map(({ url, label, ...rest }) => {
                             let cssClass = 'hover:text-ajna block py-2'
-                            if (
-                                pathname === url ||
-                                (url === '/blog' &&
-                                    pathname.startsWith('/blog/'))
-                            ) {
-                                cssClass =
-                                    'hover:text-ajna block py-2 text-ajna font-bold'
+                            if (pathname === url || (url === '/blog' && pathname.startsWith('/blog/'))) {
+                                cssClass = 'hover:text-ajna block py-2 text-ajna font-bold'
                             }
 
                             return (
-                                <a href={url} class={cssClass}  {...rest}>
+                                <a href={url} class={cssClass} {...rest}>
                                     {label}
                                 </a>
                             )
