@@ -4,6 +4,7 @@ import cactusImage from '@/img/cactus.jpg'
 import asanaImage from '@/img/asana.jpg'
 import jaguarImage from '@/img/jaguar.jpg'
 import womanImage from '@/img/woman.jpg'
+import yatchImage from '@/img/yatch.jpg'
 
 import BaseLayout from '@/layouts/BaseLayout.astro'
 import Header from '@/components/Header.astro'
@@ -12,43 +13,63 @@ import ProjectItem from '@/components/ProjectItem.astro'
 const pageTitle = 'Projects'
 const projects = [
     {
-        name: 'Personal Blog & Portfolio',
+        name: 'Armando Borge',
+        subtitle: 'Personal Blog & Portfolio',
         description:
             'A minimalist, statically generated personal website featuring a modern blog layout and responsive design.',
         year: 2025,
         url: 'https://www.armandoborge.com',
+        urlText: 'www.armandoborge.com',
         image: buildImage,
     },
     {
-        name: 'Melisa Redondo – Designer & Brand Strategist',
+        name: 'Melisa Redondo',
+        subtitle: 'Designer & Brand Strategist Portfolio',
         description:
             'A custom multilingual portfolio and personal brand showcase for a creative professional with an international client base.',
         year: 2024,
         url: 'https://www.melisaredondo.com',
+        urlText: 'www.melisaredondo.com',
         image: cactusImage,
     },
     {
-        name: 'Tribu Yoga – SaaS Platform',
+        name: 'Tribu Yoga',
+        subtitle: 'SaaS Platform',
         description:
             'A wellness-focused SaaS application designed to manage yoga studios, streamline class scheduling, and support studio operations.',
         year: 2021,
         url: 'https://www.tribu.yoga',
+        urlText: 'www.tribu.yoga',
         image: asanaImage,
     },
     {
-        name: 'La Candidieta – Health & Wellness App',
+        name: 'La Candidieta',
+        subtitle: 'Health & Wellness App',
         description:
             'A health app designed to help women recover from Candidiasis through guided nutrition, practical recipes, and sustainable lifestyle tips.',
         year: 2020,
-        url: 'https://www.lacandidieta.com',
+        url: 'https://lacandidieta.netlify.app',
+        urlText: 'www.lacandidieta.com',
         image: womanImage,
     },
     {
-        name: 'Tripping Cats – Minimal Landing Page',
+        name: 'Capitall',
+        subtitle: 'SaaS Platform',
+        description:
+            'A personal finance SaaS platform that helps users set financial goals, track expenses, receive payment reminders, and gain financial education.',
+        year: 2020,
+        url: 'https://capitallapp.netlify.app/',
+        urlText: 'www.capitallapp.app',
+        image: yatchImage,
+    },
+    {
+        name: 'Tripping Cats',
+        subtitle: 'Minimal Landing Page',
         description:
             'A responsive, ultra-minimalist landing page built for Tripping Cats OÜ to establish a clean and professional online presence.',
         year: 2019,
         url: 'https://www.trippingcats.com',
+        urlText: 'www.trippingcats.com',
         image: jaguarImage,
     },
 ]
