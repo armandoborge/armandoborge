@@ -1,0 +1,86 @@
+---
+import ProjectItem from '@/components/ProjectItem.astro'
+import buildImage from '@/img/build.jpg'
+import cactusImage from '@/img/cactus.jpg'
+import asanaImage from '@/img/asana.jpg'
+import jaguarImage from '@/img/jaguar.jpg'
+import womanImage from '@/img/woman.jpg'
+import yatchImage from '@/img/yatch.jpg'
+import mexicoImage from '@/img/mx.jpg'
+
+const projects = [
+    {
+        name: 'Armando Borge',
+        subtitle: 'Personal Blog & Portfolio',
+        description:
+            'A minimalist, statically generated personal website featuring a modern blog layout and responsive design.',
+        year: 2025,
+        url: 'https://www.armandoborge.com',
+        urlText: 'www.armandoborge.com',
+        image: buildImage,
+    },
+    {
+        name: 'Melisa Redondo',
+        subtitle: 'Designer & Brand Strategist Portfolio',
+        description:
+            'A custom multilingual portfolio and personal brand showcase for a creative professional with an international client base.',
+        year: 2024,
+        url: 'https://www.melisaredondo.com',
+        urlText: 'www.melisaredondo.com',
+        image: cactusImage,
+    },
+    {
+        name: 'Tribu Yoga',
+        subtitle: 'SaaS Platform',
+        description:
+            'A wellness-focused SaaS application designed to manage yoga studios, streamline class scheduling, and support studio operations.',
+        year: 2021,
+        url: 'https://www.tribu.yoga',
+        urlText: 'www.tribu.yoga',
+        image: asanaImage,
+    },
+    {
+        name: 'La Candidieta',
+        subtitle: 'Health & Wellness App',
+        description:
+            'A health app designed to help women recover from Candidiasis through guided nutrition, practical recipes, and sustainable lifestyle tips.',
+        year: 2020,
+        url: 'https://lacandidieta.netlify.app',
+        urlText: 'www.lacandidieta.com',
+        image: womanImage,
+    },
+    {
+        name: 'Capitall',
+        subtitle: 'SaaS Platform',
+        description:
+            'A personal finance SaaS platform that helps users set financial goals, track expenses, receive payment reminders, and gain financial education.',
+        year: 2020,
+        url: 'https://capitallapp.netlify.app/',
+        urlText: 'www.capitallapp.app',
+        image: yatchImage,
+    },
+    {
+        name: 'Tripping Cats',
+        subtitle: 'Minimal Landing Page',
+        description:
+            'A responsive, ultra-minimalist landing page built for Tripping Cats OÜ to establish a clean and professional online presence.',
+        year: 2019,
+        url: 'https://www.trippingcats.com',
+        urlText: 'www.trippingcats.com',
+        image: jaguarImage,
+    },
+    {
+        name: 'Travel Photo Log',
+        subtitle: 'Photos Gallery App',
+        description: "A travel journal app to record travel memories right as they're happening.",
+        year: 2018,
+        url: 'https://travels.armandoborge.com',
+        urlText: 'travels.armandoborge.com',
+        image: mexicoImage,
+    },
+]
+---
+
+<div class='grid gap-6 md:grid-cols-2 xl:grid-cols-3'>
+    {projects.map((project) => <ProjectItem project={project} />)}
+</div>

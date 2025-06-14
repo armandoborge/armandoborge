@@ -3,6 +3,7 @@ import { Content as BioText } from '@/pages/_bio.md'
 
 import BaseLayout from '@/layouts/BaseLayout.astro'
 import Header from '@/components/Header.astro'
+import ProjectsList from '@/components/ProjectsList.astro'
 import SideProfileImage from '@/components/SideProfileImage.astro'
 
 const pageTitle = 'Home'
@@ -23,5 +24,9 @@ const pageTitle = 'Home'
                 >Let's work together <span aria-hidden='true' class='inline-block rotate-[-45deg]'>→</span></a
             >
         </div>
+    </div>
+    <div class="mt-32">
+        <Header title="Project's Portfolio" showImage={false} />
+        <ProjectsList />
     </div>
 </BaseLayout>
