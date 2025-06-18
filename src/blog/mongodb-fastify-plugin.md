@@ -1,7 +1,7 @@
 ---
 title: Creating a production-ready MongoDB plugin for Fastify
 date: 2025-05-22
-description: "I recently migrated a huge application API (Fastify) from FaunaDB to MongoDB, in the process I realized how a reusable MongoDB plugin with proper connection management and performance optimizations was a must to improve the development experience and reduce code complexity."
+description: 'I recently migrated a huge application API (Fastify) from FaunaDB to MongoDB, in the process I realized how a reusable MongoDB plugin with proper connection management and performance optimizations was a must to improve the development experience and reduce code complexity.'
 author: Armando Borge
 tags: ['fastify', 'mongodb', 'databases', 'nodejs']
 ---
@@ -25,7 +25,7 @@ The plugin creates a MongoDB connection and makes it available throughout your F
 import fp from 'fastify-plugin'
 import { MongoClient } from 'mongodb'
 
-// 
+//
 // Remember to define your environment variables somewhere
 // process.env.MONGO_CONNECTION_STRING=mongodb://localhost:27017
 // process.env.MONGO_DB_NAME=myDatabase
@@ -40,17 +40,17 @@ async function dbInstance(fastify) {
     await client.connect()
 
     // Step 3. Decorate the Fastify instance
-    // This line adds the MongoDB database to the Fastify instance 
+    // This line adds the MongoDB database to the Fastify instance
     // so it's available globally within the app
     fastify.decorate('db', client.db(process.env.MONGO_DB_NAME))
 
-    // Step 4: Predefine the request.db property 
-    // and ensures the request object's shape is consistent 
+    // Step 4: Predefine the request.db property
+    // and ensures the request object's shape is consistent
     // from the beginning so V8 can optimize it
     // Importnat: We are not assigning the db here, just letting Fastify know the key exists
     fastify.decorateRequest('db', null)
 
-    // Step 5: Define logic on hooks 
+    // Step 5: Define logic on hooks
     // Hook to assign the db per request
     fastify.addHook('onRequest', async (request) => {
         request.db = fastify.db

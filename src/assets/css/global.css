@@ -23,7 +23,13 @@
 
     --color-yang: oklch(0.21 0 0);
     --color-yin: oklch(0.985 0 89.876);
-    --color-ajna: oklch(0.647 0.101 203.471);
+    --color-ajna: oklch(0.422 0.19 308.519);
+}
+
+@layer base {
+    @variant dark {
+        --color-ajna: oklch(0.659 0.103 204.096);
+    }
 }
 
 @layer components {

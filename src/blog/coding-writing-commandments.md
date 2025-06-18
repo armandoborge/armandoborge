@@ -1,14 +1,14 @@
 ---
 title: Henry Miller’s Creative Commandments (for coder writers)
 date: 2025-06-13
-description: "In the 1930s, Miller wrote a set of commandments to guide his writing process. I consider these guidelines are applicable to anyone engaged in creative or intellectual work; including of course software development."
+description: 'In the 1930s, Miller wrote a set of commandments to guide his writing process. I consider these guidelines are applicable to anyone engaged in creative or intellectual work; including of course software development.'
 author: Armando Borge
 tags: ['coding', 'productivity', 'development']
 ---
 
 ## Who is Henry Miller?
 
-Henry Miller (1891–1980) was an American novelist known for his raw, semi-autobiographical works like *Tropic of Cancer*, *Tropic of Capricorn* and *Black Spring*. His writing broke conventions and censorship boundaries, blending fiction, memoir, philosophy and social critique. But beyond the content of his work, his method of creating offers timeless lessons for anyone who works with ideas.
+Henry Miller (1891–1980) was an American novelist known for his raw, semi-autobiographical works like _Tropic of Cancer_, _Tropic of Capricorn_ and _Black Spring_. His writing broke conventions and censorship boundaries, blending fiction, memoir, philosophy and social critique. But beyond the content of his work, his method of creating offers timeless lessons for anyone who works with ideas.
 
 ## The Commandments
 
@@ -24,7 +24,7 @@ Don’t multitask across projects, programming languages, courses or half-built 
 
 ---
 
-### 2. Start no more new books, add no more new material to [Black Spring](https://en.wikipedia.org/wiki/Black_Spring_(short_story_collection)).
+### 2. Start no more new books, add no more new material to [Black Spring](<https://en.wikipedia.org/wiki/Black_Spring_(short_story_collection)>).
 
 Resist the urge to refactor everything. Imagine you're working on a module, and suddenly you notice another part of the code base can be improved a little bit, here YOU MUST RESIST. Write the idea or task in a note or your backlog and keep working on the task at hand.
 
@@ -40,7 +40,7 @@ Don’t let performance anxiety or perfectionism paralyze you. Write your code c
 
 ### 4. Work according to Program and not according to mood. Stop at the appointed time!
 
-Set working hours and commit to a roadmap, get used to separate planning from execution, I'll write in details on this topic in a future post. The general idea is to be clear about what it needs to be done every day. 
+Set working hours and commit to a roadmap, get used to separate planning from execution, I'll write in details on this topic in a future post. The general idea is to be clear about what it needs to be done every day.
 
 At the appointed time to stop working, stop coding and go for a walk or get some movement, powerful yoga classes work perfectly in my case; synergetics activities will make you a better coder.
 
@@ -70,7 +70,7 @@ Going out, talking to people and understanding human nature will give an edge wh
 
 Don't grind through code joylessly. If a project feels like pulling a plow, you may need to realign with what excites you. Creativity flows better when you enjoy the problem you're solving.
 
-If you're getting bored, maybe you need a new challenge. If you're feeling overwhelmed, be humble and lower the bar or maybe take time to master a new tech stack, a concept that you don't fully understand or ask for help. 
+If you're getting bored, maybe you need a new challenge. If you're feeling overwhelmed, be humble and lower the bar or maybe take time to master a new tech stack, a concept that you don't fully understand or ask for help.
 
 ---
 
