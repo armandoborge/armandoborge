@@ -14,7 +14,7 @@ When building Node.js applications with Fastify and MongoDB, establishing a prop
 2. **Global Access**: Make the database instance available globally through the Fastify instance.
 3. **Request-specific Access**: Make the database available on each request object for convenience.
 4. **Proper Cleanup**: Ensure the connection is properly closed when the server shuts down.
-5. **V8 Optimized**: Ensure the db plugin adheres to the optimization guidelines of the JavaScript Engine ([https://mathiasbynens.be/notes/shapes-ics](https://mathiasbynens.be/notes/shapes-ics)).
+5. **Engine Optimized**: Ensure the db plugin adheres to the optimization guidelines of the JavaScript Engine ([https://mathiasbynens.be/notes/shapes-ics](https://mathiasbynens.be/notes/shapes-ics)).
 
 ## 1. Defining the Fastify plugin
 
@@ -46,17 +46,16 @@ async function dbInstance(fastify) {
 
     // Step 4: Predefine the request.db property
     // and ensures the request object's shape is consistent
-    // from the beginning so V8 can optimize it
-    // Importnat: We are not assigning the db here, just letting Fastify know the key exists
+    // from the beginning so the JS engine can optimize it
+    // Important: We are not assigning the db here, just letting Fastify know the key exists
     fastify.decorateRequest('db', null)
 
-    // Step 5: Define logic on hooks
-    // Hook to assign the db per request
+    // Step 5: Assign the db per request
     fastify.addHook('onRequest', async (request) => {
         request.db = fastify.db
     })
 
-    // Hook to assign close the db connection when the server shuts down
+    // Step 6: Close the db connection when the server shuts down
     fastify.addHook('onClose', async () => {
         await client.close()
     })
