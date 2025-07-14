@@ -1,32 +1,34 @@
 ---
-import { Content as BioText } from '@/pages/_bio.md'
-
-import BaseLayout from '@/layouts/BaseLayout.astro'
+import Title from '@/components/Title.astro'
 import Header from '@/components/Header.astro'
+import BaseLayout from '@/layouts/BaseLayout.astro'
+import PostsList from '@/components/PostsList.astro'
 import ProjectsList from '@/components/ProjectsList.astro'
-import SideProfileImage from '@/components/SideProfileImage.astro'
 
 const pageTitle = 'Home'
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-    <Header title='Armando Borge' />
-    <div class='grid gap-10 lg:grid-cols-[auto_1fr]'>
-        <SideProfileImage />
-        <div
-            class='prose prose-sm prose-a:text-ajna text-yang dark:text-yin prose-strong:text-current w-full max-w-none md:columns-2'
-        >
-            <BioText />
+    <header class='mb-16'>
+        <Title title='Armando Borge' />
+        <div class='max-w-2xl leading-relaxed'>
+            <p>
+                Hello, I'm Armando, a software engineer and entrepreneur based in Costa Rica. I build web solutions that
+                empower businesses around the world. Explore my <a href='/projects' class='text-ajna hover:underline'
+                    >projects</a
+                >, read my <a href='/blog' class='text-ajna hover:underline'>thoughts on technology</a>, learn more <a
+                    href='/about'
+                    class='text-ajna hover:underline'>about me</a
+                >, or <a href='/contact' class='text-ajna hover:underline'>get in touch</a>.
+            </p>
         </div>
-        <div class='hidden lg:block'></div>
-        <div class='md:pl-[50%]'>
-            <a class='global-button' href='/contact'
-                >Let's work together <span aria-hidden='true' class='inline-block rotate-[-45deg]'>→</span></a
-            >
-        </div>
+    </header>
+    <div class='mt-32'>
+        <Header title='Blog' showImage={false} />
+        <PostsList />
     </div>
     <div class='mt-32'>
-        <Header title="Project's Portfolio" showImage={false} />
+        <Header title='Projects' showImage={false} />
         <ProjectsList />
     </div>
 </BaseLayout>

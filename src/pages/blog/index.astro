@@ -1,41 +1,17 @@
 ---
-import { getCollection } from 'astro:content'
-
-import BaseLayout from '@/layouts/BaseLayout.astro'
 import Title from '@/components/Title.astro'
-import PostPreview from '@/components/PostPreview.astro'
+import BaseLayout from '@/layouts/BaseLayout.astro'
+import PostsList from '@/components/PostsList.astro'
 
-// Get all posts and sort by date (newest first)
-const allPosts = await getCollection('blog')
 const pageTitle = 'Blog'
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-    <header class='mx-auto mb-12 text-left sm:max-w-xl sm:text-center'>
-        <Title title='Blog Posts' />
+    <header class='mb-16 sm:max-w-sm'>
+        <Title title={pageTitle} />
         <div class='leading-relaxed'>
             <p>Thoughts, stories, and ideas about web development, programming, and technology.</p>
         </div>
     </header>
-    <section class='mx-auto lg:max-w-3xl'>
-        {
-            allPosts
-                .sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
-                .map((post) => {
-                    const { id } = post
-                    const { title, date, description, author, tags } = post.data
-
-                    return (
-                        <PostPreview
-                            url={`/blog/${id}/`}
-                            title={title}
-                            date={date}
-                            description={description}
-                            author={author}
-                            tags={tags}
-                        />
-                    )
-                })
-        }
-    </section>
+    <PostsList />
 </BaseLayout>

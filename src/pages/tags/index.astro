@@ -16,8 +16,8 @@ const pageTitle = 'Tags'
     <div class='dark:divide-yin/80 divide-yang mx-auto grid gap-2 divide-y'>
         {
             tags.map((tag) => (
-                <a href={`/tags/${tag}`} class='hover:text-ajna py-4'>
-                    #{tag}
+                <a href={`/tags/${tag}`} class='hover:text-ajna py-4 capitalize'>
+                    {tag}
                 </a>
             ))
         }

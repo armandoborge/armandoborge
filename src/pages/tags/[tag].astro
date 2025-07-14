@@ -24,10 +24,10 @@ const { posts } = Astro.props
 ---
 
 <BaseLayout pageTitle={tag}>
-    <header class='mx-auto mb-12 text-left sm:max-w-xl sm:text-center'>
-        <Title title={`#${tag}`} />
+    <header class='mb-16 capitalize sm:max-w-sm'>
+        <Title title={`${tag}`} />
     </header>
-    <section class='mx-auto lg:max-w-3xl'>
+    <section>
         {
             posts
                 .sort((a, b) => b.data.date.getTime() - a.data.date.getTime())

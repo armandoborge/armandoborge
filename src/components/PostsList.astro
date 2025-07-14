@@ -1,0 +1,29 @@
+---
+import { getCollection } from 'astro:content'
+import PostPreview from '@/components/PostPreview.astro'
+
+// Get all posts and sort by date (newest first)
+const allPosts = await getCollection('blog')
+---
+
+<section>
+    {
+        allPosts
+            .sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
+            .map((post) => {
+                const { id } = post
+                const { title, date, description, author, tags } = post.data
+
+                return (
+                    <PostPreview
+                        url={`/blog/${id}/`}
+                        title={title}
+                        date={date}
+                        description={description}
+                        author={author}
+                        tags={tags}
+                    />
+                )
+            })
+    }
+</section>
