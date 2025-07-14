@@ -7,9 +7,7 @@ const formattedDate = new Date(date).toLocaleDateString('en-US', {
 })
 ---
 
-<article
-    class='group hover:outline-ajna mb-16 rounded-xs outline-1 outline-offset-[8px] outline-transparent outline-dotted'
->
+<article class='group hover:outline-ajna mb-16 outline-1 outline-offset-[20px] outline-transparent outline-dotted'>
     <a href={url} class='block'>
         <div class='mb-1.5 flex flex-wrap items-center gap-2 text-xs font-medium uppercase'>
             <time datetime={date.toString()}>{formattedDate}</time>

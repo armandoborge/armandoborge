@@ -8,11 +8,11 @@ const { title, showImage = true } = Astro.props
 
 {
     showImage && (
-        <div class='border-ajna relative isolate mx-auto mt-12 block size-40 rotate-[-15deg] overflow-hidden rounded-sm border-1 border-dotted md:mx-0 md:mt-20 lg:hidden'>
+        <div class='border-ajna relative isolate mx-auto mt-12 block size-40 rotate-[-15deg] overflow-hidden border-1 border-dotted md:mx-0 md:mt-20 lg:hidden'>
             <Image
                 src={ProfilePicture}
                 alt='Armando Borge'
-                class='absolute inset-0 -z-10 rounded-sm object-cover p-0.5'
+                class='absolute inset-0 -z-10 object-cover p-0.5'
                 width={158}
                 height={158}
                 densities={[2]}

@@ -31,11 +31,11 @@ const formattedDate = new Date(date).toLocaleDateString('en-US', {
         }
     </header>
     <article class='mx-auto lg:max-w-3xl'>
-        <p class='border-ajna bg-ajna/10 mb-8 rounded-sm border-1 border-dotted p-4 text-base italic'>
+        <p class='border-ajna bg-ajna/10 mb-8 border-1 border-dotted p-4 text-base italic'>
             {description}
         </p>
         <div
-            class='prose dark:prose-invert prose-h1:font-medium prose-h1:text-2xl prose-h2:text-xl prose-h2:font-medium prose-h3:text-lg prose-h3:font-medium prose-a:text-ajna hover:prose-a:underline prose-img:rounded-sm prose-headings:mb-4 prose-pre:bg-yang/10 dark:prose-pre:bg-yin/10 prose-pre:rounded-sm max-w-none'
+            class='prose dark:prose-invert prose-h1:font-medium prose-h1:text-2xl prose-h2:text-xl prose-h2:font-medium prose-h3:text-lg prose-h3:font-medium prose-a:text-ajna hover:prose-a:underline prose-headings:mb-4 prose-pre:bg-yang/10 dark:prose-pre:bg-yin/10 prose-pre:rounded-sm max-w-none'
         >
             <slot />
         </div>
@@ -56,12 +56,12 @@ const formattedDate = new Date(date).toLocaleDateString('en-US', {
                 </a>
                 <button
                     id='scrollToTop'
-                    class='group hover:outline-ajna text-yin dark:text-yang size-7 cursor-pointer rounded-sm outline-1 outline-offset-1 outline-transparent outline-dotted'
+                    class='group hover:outline-ajna text-yin dark:text-yang size-7 cursor-pointer outline-1 outline-offset-1 outline-transparent outline-dotted'
                     aria-label='Scroll to top'
                 >
                     <svg
                         xmlns='http://www.w3.org/2000/svg'
-                        class='dark:bg-yin bg-yang group-hover:bg-ajna size-7 rounded-sm p-1.5 transition-colors'
+                        class='dark:bg-yin bg-yang group-hover:bg-ajna size-7 p-1.5 transition-colors'
                         fill='none'
                         viewBox='0 0 24 24'
                         stroke='currentColor'
