@@ -60,9 +60,9 @@ Build small, solid pieces of functionality daily. Don't waste time endlessly res
 
 ### 7. Keep human! See people, go places, drink if you feel like it.
 
-This one is really important for developers: Don't become a hermit behind the keyboard. Connect with other people, attend meetups, take long breaks. Fresh air and conversation recharge your brain in marvelous ways.
+This one is really important for developers: Don't become a hermit behind the keyboard. Connect with other people, attend meetups, take long breaks. Fresh air and conversations recharge your brain in marvelous ways.
 
-Going out, talking to people and understanding human nature will give an edge when building user interfaces, understanding how people think, how they feel and how they interact with the world is a valuable skill you shouldn't neglect.
+Going out, talking to people and understanding human nature will give you an edge when building user interfaces, understanding how people think, how they feel and how they interact with the world is a valuable skill you shouldn't neglect.
 
 ---
 
@@ -88,7 +88,7 @@ Don't daydream about the future app you'll build someday. Focus on the app you'r
 
 ### 11. Write first and always. Painting, music, friends, cinema, all these come afterwards.
 
-Make building your priority. Do the deep work before checking Slack, social media, or tech blogs. Write your code first. The rest can wait.
+Make building your priority. Do the deep work before checking Slack, social media or tech blogs. Write your code first, impact by delivering. The rest can wait.
 
 ---
 
