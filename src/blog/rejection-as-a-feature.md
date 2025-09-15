@@ -1,18 +1,18 @@
 ---
-title: Rejection as a Feature, Not a Bug - What Natural Selection Teaches About Product-Market Fit
+title: Rejection as a feature, not a Bug
 date: 2025-09-09
 description: 'Rejection is the natural filtration system of the universe. Raw and cruel from a human perspective but necessary for survival and thriving. We can harness its power by reframing our mental models about it in life and business.'
 author: Armando Borge
 tags: ['business', 'productivity', 'mindset', 'entrepreneurship']
 ---
 
-## Innate Instinct
+## Innate instinct
 
 Humans are insecure beings. Millions of years as prey animals (before ascending as lethal hunters) wired our nervous system to detect threats and panic under the most insignificant circumstances. In the modern world, rejection is one of the most common triggers of that ancient anxiety: a potential customer says no, an investor passes, the market shrugs at your latest feature (or worse, nobody even notices). We feel it as personal failure, our sense of worth diminishes and our inner world collapses.
 
 But if we zoom out for a moment, stop the drama and pay close attention to the natural world, we can learn to approach rejection differently. By observing how nature operates we discover that rejection is not weakness but the fundamental principle shaping who gets selected to move forward.
 
-## Understanding The System
+## Understanding the system
 
 In nature, rejection is the default state. Most organisms never reproduce, most mutations never persist, most strategies never work, most species go extinct. Natural selection advances not because everything succeeds but because almost everything fails. Evolution is essentially one long feedback loop of rejection and success.
 
@@ -24,7 +24,7 @@ Even ideas don't escape. Most are discarded instantly or buried in notebooks no 
 
 If we see reality as an ever-changing environment, then each subsystem embedded within it is struggling toward stability in relation to that shifting state. Rejection is the heuristic that keeps pace with relentless change. It's not a glitch, it's a core feature of the system. A system that selects, purges, polishes and trims what isn't truly suited to the environment.
 
-## A Better Mental Model
+## A better mental model
 
 Products operate the same way. The market doesn't politely explain why your idea doesn't fit, it just ignores you. That indifference isn't cruelty, it's information. Your offer simply doesn't tip the survival or pleasure scales enough for people to bother. Each no tells you something about what people value, what they'll pay for and what problems are painful enough to demand solutions.
 
@@ -40,7 +40,7 @@ Here's the deeper truth: rejection is not an obstacle, it's the skeleton of real
 
 Rejection is nature's way of saying: *Prove you deserve to persist.* Most don't. That's why persistence itself becomes the only unfair advantage. To live aligned with reality instead of illusion, stop resisting rejection and start running toward it. Ask for it. Then adapt.
 
-## Leveraging the Feature
+## Leveraging the feature
 
 Here are some general rules to get the most out of this ingrained feature of reality:
 
@@ -74,6 +74,6 @@ Here are some general rules to get the most out of this ingrained feature of rea
 10. **Persist longer than others.**  
     Most people quit after the first hundred no's. Luck eventually favors those who simply stay in the game. Persistence bends rejection into eventual acceptance.
 
-## Final Note
+## Final note
 
 Rejection is how nature refines life. It's also how the market refines products. Stop seeing it as an obstacle and start seeing it as the filter that gives meaning to success. If everything got accepted, nothing would matter.

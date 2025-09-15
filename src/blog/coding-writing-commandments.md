@@ -1,6 +1,6 @@
 ---
-title: Henry Miller’s Creative Commandments (for coder writers)
-date: 2025-06-13
+title: Henry Miller's creative commandments (for coder writers)
+date: 2025-08-21
 description: 'In the 1930s, Miller wrote a set of commandments to guide his writing process. I consider these guidelines are applicable to anyone engaged in creative or intellectual work; including of course software development.'
 author: Armando Borge
 tags: ['coding', 'productivity', 'development']
@@ -10,7 +10,7 @@ tags: ['coding', 'productivity', 'development']
 
 Henry Miller (1891–1980) was an American novelist known for his raw, semi-autobiographical works like _Tropic of Cancer_, _Tropic of Capricorn_ and _Black Spring_. His writing broke conventions and censorship boundaries, blending fiction, memoir, philosophy and social critique. But beyond the content of his work, his method of creating offers timeless lessons for anyone who works with ideas.
 
-## The Commandments
+## The commandments
 
 In the 1930s, Miller wrote a set of commandments to guide his writing process. I consider these guidelines are applicable to anyone engaged in creative or intellectual work; including of course **software development**.
 
@@ -20,7 +20,7 @@ Whether you're building an app, debugging a complex system or architecting a new
 
 ### 1. Work on one thing at a time until finished.
 
-Don’t multitask across projects, programming languages, courses or half-built projects. Pick a task (e.g., building an API route, fixing a bug, designing or refactoring a component) and follow it through to completion. Context switching kills flow and hinders your productivity.
+Don't multitask across projects, programming languages, courses or half-built projects. Pick a task (e.g., building an API route, fixing a bug, designing or refactoring a component) and follow it through to completion. Context switching kills flow and hinders your productivity.
 
 ---
 
@@ -32,9 +32,9 @@ Resist as well the need to add “just one more” feature to a finished module.
 
 ---
 
-### 3. Don’t be nervous. Work calmly, joyously, recklessly on whatever is in hand.
+### 3. Don't be nervous. Work calmly, joyously, recklessly on whatever is in hand.
 
-Don’t let performance anxiety or perfectionism paralyze you. Write your code confidently, forget about the time, refactor later. Embrace mistakes as part of the process. Build with curiosity and joy, have the calm to understand each line of code, be curious: What happens if I change this line or that one?.
+Don't let performance anxiety or perfectionism paralyze you. Write your code confidently, forget about the time, refactor later. Embrace mistakes as part of the process. Build with curiosity and joy, have the calm to understand each line of code, be curious: What happens if I change this line or that one?.
 
 ---
 
@@ -46,7 +46,7 @@ At the appointed time to stop working, stop coding and go for a walk or get some
 
 ---
 
-### 5. When you can’t create you can work.
+### 5. When you can't create you can work.
 
 Can't write elegant logic today? No problem, then clean up some code, improve the documentation, write tests, research, understand that module that complex module. Progress isn't always glamorous, but it always counts.
 
@@ -66,7 +66,7 @@ Going out, talking to people and understanding human nature will give you an edg
 
 ---
 
-### 8. Don’t be a draught-horse! Work with pleasure only.
+### 8. Don't be a draught-horse! Work with pleasure only.
 
 Don't grind through code joylessly. If a project feels like pulling a plow, you may need to realign with what excites you. Creativity flows better when you enjoy the problem you're solving.
 
