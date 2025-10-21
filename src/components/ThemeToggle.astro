@@ -28,7 +28,7 @@
 
 <script>
     const currentTheme = (() => {
-        const localStorageTheme = localStorage?.getItem('theme') ?? ''
+        const localStorageTheme = localStorage?.getItem('theme') ?? 'dark'
 
         if (['dark', 'light'].includes(localStorageTheme)) {
             return localStorageTheme

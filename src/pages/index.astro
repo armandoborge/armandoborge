@@ -1,31 +1,56 @@
 ---
+import { Image } from 'astro:assets'
+
 import BaseLayout from '@/layouts/BaseLayout.astro'
 import ProjectsList from '@/components/ProjectsList.astro'
+import ProfilePicture from '@/img/ab.jpg'
 
 const pageTitle = 'Home'
 ---
 
 <BaseLayout pageTitle={pageTitle}>
     <header class='mb-20 lg:mb-28'>
-        <div class='mx-auto max-w-xl text-center leading-relaxed'>
+        <Image
+            src={ProfilePicture}
+            alt='Armando Borge'
+            width={158}
+            height={158}
+            densities={[2]}
+            class='mx-auto mb-8 size-24 rounded-full border-2 border-black object-cover opacity-70 dark:border-white'
+        />
+        <div class='mx-auto mb-6 max-w-xl text-center leading-relaxed'>
             <p>
-                Hello, I'm Armando, Co-founder of <a
+                I’m Armando — a software engineer, digital entrepreneur, psychonaut, and explorer. Co-founder of <a
                     href='https://www.tribu.yoga'
                     target='_blank'
                     rel='noopener noreferrer'
                     class='text-ajna hover:underline'>Tribu Yoga</a
-                > and
-                <a
+                > and <a
                     href='https://www.trippingcats.com/'
                     target='_blank'
                     rel='noopener noreferrer'
                     class='text-ajna hover:underline'>Tripping Cats</a
-                >. I write on philosophy, entrepreneurship and the art of living freely. Ideas, insights and
-                perspectives for those curious enough to follow.
+                >. Come say hi...
             </p>
         </div>
+        <div class='mx-auto flex justify-center gap-x-8 text-center text-xs/5 font-bold uppercase'>
+            <a href='https://github.com/armandoborge' class='hover:text-ajna' target='_blank' rel='noopener noreferrer'>
+                Instagram
+            </a>
+            <a href='https://github.com/armandoborge' class='hover:text-ajna' target='_blank' rel='noopener noreferrer'>
+                GitHub
+            </a>
+            <a
+                href='https://www.linkedin.com/in/armandoborge'
+                class='hover:text-ajna'
+                target='_blank'
+                rel='noopener noreferrer'
+            >
+                LinkedIn
+            </a>
+        </div>
     </header>
-    <div class='mb-20 lg:mb-28'>
+    <div class='mb-12'>
         <ProjectsList />
     </div>
 </BaseLayout>
