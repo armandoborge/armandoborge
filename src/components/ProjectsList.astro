@@ -1,6 +1,7 @@
 ---
 import ProjectItem from '@/components/ProjectItem.astro'
-import buildImage from '@/img/build.jpg'
+import coyoteImg from '@/img/coyote.jpg'
+import buildImage from '@/img/guitar.jpg'
 import cactusImage from '@/img/cactus.jpg'
 import asanaImage from '@/img/asana.jpg'
 import jaguarImage from '@/img/jaguar.jpg'
@@ -10,24 +11,13 @@ import mexicoImage from '@/img/mx.jpg'
 
 const projects = [
     {
-        name: 'Armando Borge',
-        subtitle: 'Personal Blog & Portfolio',
-        description:
-            'A minimalist, statically generated personal website featuring a modern blog layout and responsive design.',
-        year: 2025,
-        url: 'https://www.armandoborge.com',
-        urlText: 'www.armandoborge.com',
-        image: buildImage,
-    },
-    {
-        name: 'Melisa Redondo',
-        subtitle: 'Designer & Brand Strategist Portfolio',
-        description:
-            'A custom multilingual portfolio and personal brand showcase for a creative professional with an international client base.',
-        year: 2024,
-        url: 'https://www.melisaredondo.com',
-        urlText: 'www.melisaredondo.com',
-        image: cactusImage,
+        name: 'Psychonauts Space',
+        subtitle: 'Psychonauts Explorer Community',
+        description: 'A shared experiment through sound and serendipity.',
+        year: 2026,
+        url: 'https://www.psychonauts.space',
+        urlText: 'www.psychonauts.space',
+        image: coyoteImg,
     },
     {
         name: 'Tribu Yoga',
@@ -40,24 +30,23 @@ const projects = [
         image: asanaImage,
     },
     {
-        name: 'La Candidieta',
-        subtitle: 'Health & Wellness App',
-        description:
-            'A health app designed to help women recover from Candidiasis through guided nutrition, practical recipes, and sustainable lifestyle tips.',
-        year: 2020,
-        url: 'https://lacandidieta.netlify.app',
-        urlText: 'www.lacandidieta.com',
-        image: womanImage,
+        name: 'Armando Borge',
+        subtitle: 'Personal Portfolio',
+        description: 'A minimalist, statically generated personal showcase featuring a modern and responsive design.',
+        year: 2025,
+        url: 'https://www.armandoborge.com',
+        urlText: 'www.armandoborge.com',
+        image: buildImage,
     },
     {
-        name: 'Capitall',
-        subtitle: 'SaaS Platform',
+        name: 'Melisa Redondo',
+        subtitle: 'Designer & Brand Strategist Portfolio',
         description:
-            'A personal finance SaaS platform that helps users set financial goals, track expenses, receive payment reminders, and gain financial education.',
-        year: 2020,
-        url: 'https://capitallapp.netlify.app/',
-        urlText: 'www.capitallapp.app',
-        image: yatchImage,
+            'A custom multilingual portfolio and personal brand showcase for a creative professional with an international client base.',
+        year: 2023,
+        url: 'https://www.melisaredondo.com',
+        urlText: 'www.melisaredondo.com',
+        image: cactusImage,
     },
     {
         name: 'Tripping Cats',
@@ -78,9 +67,29 @@ const projects = [
         urlText: 'travels.armandoborge.com',
         image: mexicoImage,
     },
+    {
+        name: 'La Candidieta',
+        subtitle: 'Health & Wellness App',
+        description:
+            'A health app designed to help women recover from Candidiasis through guided nutrition, practical recipes, and sustainable lifestyle tips.',
+        year: 2018,
+        url: 'https://lacandidieta.netlify.app',
+        urlText: 'lacandidieta.netlify.app',
+        image: womanImage,
+    },
+    {
+        name: 'Capitall',
+        subtitle: 'SaaS Platform',
+        description:
+            'A personal finance SaaS platform that helps users set financial goals, track expenses, receive payment reminders, and gain financial education.',
+        year: 2020,
+        url: 'https://capitallapp.netlify.app/',
+        urlText: 'capitallapp.netlify.app',
+        image: yatchImage,
+    },
 ]
 ---
 
-<div class='grid gap-4 md:grid-cols-2'>
+<div class='grid gap-6 sm:grid-cols-2 lg:grid-cols-3'>
     {projects.map((project) => <ProjectItem project={project} />)}
 </div>

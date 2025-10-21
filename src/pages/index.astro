@@ -1,7 +1,5 @@
 ---
-import Title from '@/components/Title.astro'
 import BaseLayout from '@/layouts/BaseLayout.astro'
-import PostsList from '@/components/PostsList.astro'
 import ProjectsList from '@/components/ProjectsList.astro'
 
 const pageTitle = 'Home'
@@ -9,7 +7,7 @@ const pageTitle = 'Home'
 
 <BaseLayout pageTitle={pageTitle}>
     <header class='mb-20 lg:mb-28'>
-        <div class='max-w-xl leading-relaxed'>
+        <div class='mx-auto max-w-xl text-center leading-relaxed'>
             <p>
                 Hello, I'm Armando, Co-founder of <a
                     href='https://www.tribu.yoga'
@@ -28,11 +26,6 @@ const pageTitle = 'Home'
         </div>
     </header>
     <div class='mb-20 lg:mb-28'>
-        <Title title='Blog' />
-        <PostsList />
-    </div>
-    <div class='mb-20 lg:mb-28'>
-        <Title title='Projects' />
         <ProjectsList />
     </div>
 </BaseLayout>
