@@ -12,11 +12,7 @@ export default defineConfig({
     vite: {
         plugins: [tailwindcss()],
     },
-    integrations: [
-        sitemap({
-            filter: (page) => page !== 'https://www.armandoborge.com/success',
-        }),
-    ],
+    integrations: [sitemap()],
     markdown: {
         shikiConfig: {
             themes: {
