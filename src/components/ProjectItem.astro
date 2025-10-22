@@ -5,18 +5,16 @@ const { project } = Astro.props
 const { name, subtitle, year, description, image, url, urlText } = project
 ---
 
-<article
-    class='group dark:text-yin relative isolate flex max-h-150 flex-col justify-between gap-60 overflow-hidden p-4'
->
+<article class='group dark:text-yin relative isolate flex flex-col justify-between gap-60 overflow-hidden p-4'>
     <Image
         src={image}
         alt={name}
         width='700'
         height='700'
-        class='absolute inset-0 -z-10 size-full rounded-md object-cover grayscale-50'
+        class='absolute inset-0 -z-10 size-full rounded-md border-[1px] border-solid border-gray-500 object-cover grayscale-50 dark:border-slate-500'
     />
     <div
-        class='group-hover:bg-yin/80 bg-yin/60 dark:group-hover:bg-yang/80 dark:bg-yang/60 absolute inset-0 -z-10 duration-300'
+        class='group-hover:bg-yin/60 bg-yin/30 dark:group-hover:bg-yang/60 dark:bg-yang/30 absolute inset-0 -z-10 duration-200'
     >
     </div>
     <div class='relative'>
@@ -32,11 +30,11 @@ const { name, subtitle, year, description, image, url, urlText } = project
             </h3>
         </div>
     </div>
-    <div class='flex flex-col gap-1'>
+    <div class='bg-yin/60 dark:bg-yang/60 -mx-4 -mb-4 flex flex-col gap-1 p-4'>
         <p class='mt-2 text-sm leading-relaxed text-balance'>
             {description}
         </p>
-        <a href={url} title={name} target='_blank' rel='noopener noreferrer' class='text-sm font-medium'>
+        <a href={url} title={name} target='_blank' rel='noopener noreferrer' class='text-ajna text-sm font-medium'>
             <span class='absolute inset-0'></span>
             {urlText}
         </a>
