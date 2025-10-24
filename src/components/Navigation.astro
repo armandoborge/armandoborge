@@ -1,6 +1,8 @@
 ---
-import Logo from '@/components/Logo.astro'
+import { Image } from 'astro:assets'
+
 import ThemeToggle from '@/components/ThemeToggle.astro'
+import Favicon from '@/img/favicon.png'
 ---
 
 <header class='dark:bg-yang bg-yin sticky top-0 z-10'>
@@ -8,7 +10,16 @@ import ThemeToggle from '@/components/ThemeToggle.astro'
         class='mx-auto flex w-full max-w-6xl items-center justify-between px-4 pt-8 pb-2 md:px-10 lg:px-14'
         aria-label='Global'
     >
-        <Logo />
+        <a href='/' class='size-8'>
+            <Image
+                src={Favicon}
+                alt='Armando Borge'
+                width={36}
+                height={36}
+                densities={[2]}
+                class='invert-100 dark:invert-0'
+            />
+        </a>
         <div class='md:flex md:gap-x-12'>
             <ThemeToggle />
         </div>

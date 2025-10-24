@@ -13,13 +13,4 @@ export default defineConfig({
         plugins: [tailwindcss()],
     },
     integrations: [sitemap()],
-    markdown: {
-        shikiConfig: {
-            themes: {
-                light: 'catppuccin-latte',
-                dark: 'nord',
-            },
-            wrap: true,
-        },
-    },
 })
