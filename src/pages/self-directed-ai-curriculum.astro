@@ -1,0 +1,295 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro'
+import { STABILITY_BADGE, roadmap, books as library, intel } from '../data/curriculumData.js'
+
+const pageTitle = 'Self-Directed AI Curriculum'
+---
+
+<BaseLayout pageTitle={pageTitle}>
+    <header class='mb-16 text-center lg:mb-20'>
+        <div class='mb-4 font-mono text-xs tracking-widest text-neutral-500 uppercase dark:text-neutral-400'>
+            AI Engineering Roadmap
+        </div>
+        <h1 class='mb-6 font-serif text-4xl leading-tight font-black lg:text-6xl'>
+            From Software Engineer to<br />
+            <span class='text-ajna'>AI Engineer</span>
+        </h1>
+        <p class='mx-auto max-w-2xl leading-relaxed font-light text-neutral-600 dark:text-neutral-400'>
+            14-month self-directed curriculum for an experienced software engineer. Includes a 6-week math ramp before
+            the core plan. All resources verified active as of March 2026. Principles and tools selected to remain
+            relevant through <strong class='font-semibold text-neutral-800 dark:text-neutral-100'>at least 2030</strong
+            >.
+        </p>
+        <div class='mt-8 flex flex-wrap justify-center gap-6'>
+            <div class='flex flex-col items-center'>
+                <span class='text-ajna font-mono text-2xl font-bold'>~820</span>
+                <span class='text-xs tracking-wider text-neutral-500 uppercase'>Total Hours</span>
+            </div>
+            <div class='flex flex-col items-center'>
+                <span class='text-ajna font-mono text-2xl font-bold'>2</span>
+                <span class='text-xs tracking-wider text-neutral-500 uppercase'>Hours / Day</span>
+            </div>
+            <div class='flex flex-col items-center'>
+                <span class='text-ajna font-mono text-2xl font-bold'>5</span>
+                <span class='text-xs tracking-wider text-neutral-500 uppercase'>Quarters</span>
+            </div>
+        </div>
+    </header>
+    <div>
+        {/* Tabs */}
+        <div class='mb-10 flex overflow-hidden border-b border-neutral-300 dark:border-neutral-800'>
+            <button
+                class='tab-button border-ajna -mb-px cursor-pointer border-b-4 px-6 py-3 font-medium whitespace-nowrap text-neutral-800 transition-colors dark:text-neutral-100'
+                data-target='roadmap'
+            >
+                Roadmap
+            </button>
+            <button
+                class='tab-button -mb-px cursor-pointer border-b-4 border-transparent px-6 py-3 font-medium whitespace-nowrap text-neutral-500 transition-colors hover:text-neutral-700 dark:text-neutral-400 dark:hover:text-neutral-300'
+                data-target='library'
+            >
+                Books
+            </button>
+            <button
+                class='tab-button -mb-px cursor-pointer border-b-4 border-transparent px-6 py-3 font-medium whitespace-nowrap text-neutral-500 transition-colors hover:text-neutral-700 dark:text-neutral-400 dark:hover:text-neutral-300'
+                data-target='intel'
+            >
+                Communities
+            </button>
+        </div>
+        <div class='min-h-[50vh]'>
+            <section id='roadmap' class='tab-content block'>
+                <h2 class='hidden'>Curriculum</h2>
+                <div class='space-y-12'>
+                    {
+                        roadmap.map((q) => (
+                            <div class='rounded-md border border-neutral-300 bg-white/5 p-6 lg:p-8 dark:border-neutral-800 dark:bg-black/5'>
+                                <div class='mb-6'>
+                                    <div class='mb-2 flex flex-wrap items-baseline justify-between'>
+                                        <h3 class='text-2xl font-medium'>
+                                            {q.quarter}: {q.theme}
+                                        </h3>
+                                        <span class='font-mono text-sm text-neutral-500'>
+                                            {q.months} • {q.hours}
+                                        </span>
+                                    </div>
+                                    <p class='mb-4 text-lg font-medium text-neutral-800 dark:text-neutral-200'>
+                                        {q.subtitle}
+                                    </p>
+                                    <p class='text-sm text-neutral-600 dark:text-neutral-400'>{q.rationale}</p>
+                                </div>
+                                <div class='mt-8 space-y-4'>
+                                    {q.topics.map((topic) => (
+                                        <details class='group rounded-md border border-neutral-300 dark:border-neutral-800'>
+                                            <summary class='flex cursor-pointer items-center justify-between p-4 select-none'>
+                                                <span>
+                                                    <span class='text-ajna mr-3 text-sm font-medium'>{topic.week}</span>
+                                                    {topic.title}
+                                                </span>
+                                                <svg
+                                                    class='size-5 transform text-neutral-400 transition-transform group-open:rotate-180'
+                                                    xmlns='http://www.w3.org/2000/svg'
+                                                    viewBox='0 0 24 24'
+                                                    fill='none'
+                                                    stroke='currentColor'
+                                                    stroke-width='2'
+                                                    stroke-linecap='round'
+                                                    stroke-linejoin='round'
+                                                >
+                                                    <path d='m6 9 6 6 6-6' />
+                                                </svg>
+                                            </summary>
+                                            <div class='border-t border-neutral-300 p-4 pt-0 dark:border-neutral-800'>
+                                                <div class='mt-4 mb-6'>
+                                                    <h4 class='mb-3 text-xs font-semibold tracking-wider text-neutral-500 uppercase'>
+                                                        Key Concepts
+                                                    </h4>
+                                                    <ul class='list-disc space-y-2 pl-5 text-sm text-neutral-700 dark:text-neutral-300'>
+                                                        {topic.items.map((item) => (
+                                                            <li>{item}</li>
+                                                        ))}
+                                                    </ul>
+                                                </div>
+                                                <div>
+                                                    <h4 class='mb-3 text-xs font-semibold tracking-wider text-neutral-500 uppercase'>
+                                                        Resources
+                                                    </h4>
+                                                    <ul class='space-y-3'>
+                                                        {topic.resources.map((res) => (
+                                                            <li class='flex items-start text-sm'>
+                                                                <a
+                                                                    href={res.url}
+                                                                    target='_blank'
+                                                                    rel='noopener noreferrer'
+                                                                    class='text-ajna mr-3 block flex-1 hover:underline'
+                                                                >
+                                                                    {res.name}
+                                                                </a>
+                                                                {res.stability && STABILITY_BADGE[res.stability] && (
+                                                                    <span
+                                                                        class='ml-2 rounded px-2 py-0.5 font-mono text-[10px] whitespace-nowrap'
+                                                                        style={`color: ${STABILITY_BADGE[res.stability].color}; background: ${STABILITY_BADGE[res.stability].bg};`}
+                                                                    >
+                                                                        {STABILITY_BADGE[res.stability].label}
+                                                                    </span>
+                                                                )}
+                                                            </li>
+                                                        ))}
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </details>
+                                    ))}
+                                </div>
+                            </div>
+                        ))
+                    }
+                </div>
+                <div
+                    class='mt-12 flex flex-wrap items-center gap-6 border-t border-neutral-300 pt-6 dark:border-neutral-800'
+                >
+                    <div class='font-mono text-[10px] tracking-widest text-neutral-500 uppercase'>
+                        Resource Stability:
+                    </div>
+                    {
+                        Object.entries(STABILITY_BADGE).map(([k, v]) => (
+                            <div class='flex items-center gap-2'>
+                                <span
+                                    class='rounded px-2 py-0.5 font-mono text-[10px] tracking-wide'
+                                    style={`color: ${v.color}; background: ${v.bg};`}
+                                >
+                                    {v.label}
+                                </span>
+                                <span class='text-xs text-neutral-500'>
+                                    {k === 'evergreen'
+                                        ? '10+ year horizon'
+                                        : k === 'stable'
+                                          ? '3–5+ year horizon'
+                                          : 'Relevant today, monitor for changes'}
+                                </span>
+                            </div>
+                        ))
+                    }
+                </div>
+            </section>
+            {/* Core Book Section */}
+            <section id='library' class='tab-content hidden'>
+                <h2 class='hidden'>Books</h2>
+                <div class='grid grid-cols-1 gap-6 md:grid-cols-2'>
+                    {
+                        library.map((book) => (
+                            <div class='rounded-md border border-neutral-300 p-5 dark:border-neutral-800'>
+                                <div class='mb-2 flex items-start justify-between gap-4'>
+                                    <div>
+                                        <h3 class='mb-1 text-lg font-medium'>{book.title}</h3>
+                                        <p class='font-mono text-sm text-neutral-500'>{book.author}</p>
+                                    </div>
+                                    <span class='min-w-[55px] rounded bg-neutral-100 px-2 py-1 text-center text-[11px] font-medium text-neutral-600 dark:bg-neutral-800 dark:text-neutral-400'>
+                                        {book.when}
+                                    </span>
+                                </div>
+                                <div class='mt-4'>
+                                    <span class='text-xs font-semibold tracking-wider text-neutral-500 uppercase'>
+                                        {book.tier}
+                                    </span>
+                                    <p class='mt-1 text-sm text-neutral-700 dark:text-neutral-300'>{book.note}</p>
+                                </div>
+                            </div>
+                        ))
+                    }
+                </div>
+            </section>
+            {/* Ecosystem Intel Section */}
+            <section id='intel' class='tab-content hidden'>
+                <h2 class='hidden'>Communities</h2>
+                <h3 class='mb-4 text-xl font-medium'>Active AI Communities & Conferences</h3>
+                <div class='grid grid-cols-1 gap-6 md:grid-cols-2'>
+                    {
+                        intel.communities.map((comm) => (
+                            <div class='rounded-md border border-neutral-300 p-5 dark:border-neutral-800'>
+                                <div class='mb-2 flex items-center justify-between'>
+                                    <h4 class='font-medium'>{comm.name}</h4>
+                                    {comm.url && comm.url !== '#' && (
+                                        <a
+                                            href={comm.url}
+                                            target='_blank'
+                                            rel='noopener noreferrer'
+                                            class='text-ajna text-xs hover:underline'
+                                        >
+                                            Visit ↗
+                                        </a>
+                                    )}
+                                </div>
+                                <p class='text-sm text-neutral-600 dark:text-neutral-400'>{comm.desc}</p>
+                            </div>
+                        ))
+                    }
+                </div>
+                <h3 class='mt-10 mb-4 text-xl font-medium'>High-Signal Information Sources</h3>
+                <div class='overflow-x-auto rounded-md border border-neutral-300 dark:border-neutral-800'>
+                    <table class='w-full text-left text-sm'>
+                        <thead class='bg-neutral-100 font-mono text-xs uppercase dark:bg-neutral-900'>
+                            <tr>
+                                <th class='px-4 py-3'>Source</th>
+                                <th class='px-4 py-3'>Platform</th>
+                                <th class='px-4 py-3'>Why it matters</th>
+                            </tr>
+                        </thead>
+                        <tbody class='divide-y divide-neutral-200 dark:divide-neutral-800'>
+                            {
+                                intel.sources.map((src) => (
+                                    <tr class='hover:bg-neutral-50 dark:hover:bg-neutral-900/50'>
+                                        <td class='px-4 py-3 font-semibold'>{src.name}</td>
+                                        <td class='px-4 py-3 font-mono text-neutral-500'>{src.platform}</td>
+                                        <td class='px-4 py-3 text-neutral-600 dark:text-neutral-400'>{src.why}</td>
+                                    </tr>
+                                ))
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <script>
+        function setupTabs() {
+            const buttons = document.querySelectorAll('.tab-button')
+            const contents = document.querySelectorAll('.tab-content')
+
+            buttons.forEach((button) => {
+                button.addEventListener('click', () => {
+                    const target = button.getAttribute('data-target')
+
+                    // Update buttons
+                    buttons.forEach((btn) => {
+                        if (btn === button) {
+                            btn.classList.add('border-ajna', 'text-neutral-800', 'dark:text-neutral-100')
+                            btn.classList.remove('border-transparent', 'text-neutral-500', 'dark:text-neutral-400')
+                        } else {
+                            btn.classList.remove('border-ajna', 'text-neutral-800', 'dark:text-neutral-100')
+                            btn.classList.add('border-transparent', 'text-neutral-500', 'dark:text-neutral-400')
+                        }
+                    })
+
+                    // Update contents
+                    contents.forEach((content) => {
+                        if (content.id === target) {
+                            content.classList.remove('hidden')
+                            content.classList.add('block')
+                        } else {
+                            content.classList.add('hidden')
+                            content.classList.remove('block')
+                        }
+                    })
+                })
+            })
+        }
+
+        // Run on initial load
+        setupTabs()
+
+        // Support Astro view transitions if they are enabled in the project
+        document.addEventListener('astro:page-load', setupTabs)
+    </script>
+</BaseLayout>
