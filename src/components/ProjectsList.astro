@@ -1,6 +1,5 @@
 ---
 import ProjectItem from '@/components/ProjectItem.astro'
-import coyoteImg from '@/img/coyote.jpg'
 import conconImage from '@/img/concon.jpg'
 import notebookImage from '@/img/notebook.jpg'
 import cactusImage from '@/img/cactus.jpg'
@@ -9,8 +8,18 @@ import jaguarImage from '@/img/jaguar.jpg'
 import womanImage from '@/img/woman.jpg'
 import yatchImage from '@/img/yatch.jpg'
 import mexicoImage from '@/img/mx.jpg'
+import contentImage from '@/img/content.jpg'
 
 const projects = [
+    {
+        name: 'Content Seed',
+        subtitle: 'AI Content Generation Tool',
+        description:
+            'An AI-powered content generator that creates carousels, stories, email sequences and content plans for creators and agencies.',
+        year: 2026,
+        url: 'https://contentseed.app',
+        image: contentImage,
+    },
     {
         name: 'Tribu Yoga',
         subtitle: 'SaaS Platform',
@@ -18,7 +27,6 @@ const projects = [
             'A wellness SaaS application designed to manage yoga studios, streamline class scheduling and support studio operations.',
         year: 2021,
         url: 'https://www.tribu.yoga',
-        urlText: 'www.tribu.yoga',
         image: asanaImage,
     },
     {
@@ -28,7 +36,6 @@ const projects = [
             'A custom multilingual portfolio and personal brand showcase for a creative professional with an international client base.',
         year: 2023,
         url: 'https://www.melisaredondo.com',
-        urlText: 'www.melisaredondo.com',
         image: cactusImage,
     },
     {
@@ -37,7 +44,6 @@ const projects = [
         description: 'A responsive, ultra-minimalist landing page built for Tripping Cats OÜ online presence.',
         year: 2019,
         url: 'https://www.trippingcats.com',
-        urlText: 'www.trippingcats.com',
         image: jaguarImage,
     },
     {
@@ -46,7 +52,6 @@ const projects = [
         description: 'A minimalist, statically generated personal showcase featuring a modern design.',
         year: 2025,
         url: 'https://www.armandoborge.com',
-        urlText: 'www.armandoborge.com',
         image: conconImage,
     },
     {
@@ -55,7 +60,6 @@ const projects = [
         description: 'A modern, minimalist, and private challenges and habits tracker.',
         year: 2026,
         url: 'https://challenge-tracker.armandoborge.com/',
-        urlText: 'challenge-tracker.armandoborge.com',
         image: notebookImage,
     },
     {
@@ -64,7 +68,6 @@ const projects = [
         description: "A travel journal app to record travel memories right as they're happening.",
         year: 2018,
         url: 'https://travels.armandoborge.com',
-        urlText: 'travels.armandoborge.com',
         image: mexicoImage,
     },
     {
@@ -74,7 +77,6 @@ const projects = [
             'A health app designed to help women recover from Candidiasis through guided nutrition, practical recipes, and sustainable lifestyle tips.',
         year: 2018,
         url: 'https://lacandidieta.netlify.app',
-        urlText: 'lacandidieta.netlify.app',
         image: womanImage,
     },
     {
@@ -84,12 +86,18 @@ const projects = [
             'A personal finance SaaS platform that helps users set financial goals, track expenses, receive payment reminders, and gain financial education.',
         year: 2020,
         url: 'https://capitallapp.netlify.app/',
-        urlText: 'capitallapp.netlify.app',
         image: yatchImage,
     },
 ]
 ---
 
-<div class='grid gap-6 sm:grid-cols-2 lg:grid-cols-3'>
-    {projects.map((project) => <ProjectItem project={project} />)}
-</div>
+<section>
+    <div class='mb-4 flex items-center gap-4'>
+        <span class='bg-yang/10 dark:bg-yin/10 h-px flex-1'></span>
+        <span class='text-ajna text-[10px] font-medium tracking-[0.3em] uppercase'>Selected Work</span>
+        <span class='bg-yang/10 dark:bg-yin/10 h-px flex-1'></span>
+    </div>
+    <div>
+        {projects.map((project, index) => <ProjectItem project={project} index={index} />)}
+    </div>
+</section>

@@ -1,42 +1,63 @@
 ---
 import { Image } from 'astro:assets'
 
-const { project } = Astro.props
-const { name, subtitle, year, description, image, url, urlText } = project
+const { project, index } = Astro.props
+const { name, subtitle, year, description, image, url } = project
+const num = String(index + 1).padStart(2, '0')
 ---
 
-<article class='group dark:text-yin relative isolate flex flex-col justify-between gap-60 overflow-hidden p-4'>
-    <Image
-        src={image}
-        alt={name}
-        width='900'
-        height='900'
-        class='absolute inset-0 -z-10 size-full rounded-md object-cover grayscale-50'
-    />
-    <div
-        class='group-hover:bg-yin/60 bg-yin/30 dark:group-hover:bg-yang/60 dark:bg-yang/30 absolute inset-0 -z-10 duration-200'
+<article
+    class='group border-yang/10 last:border-yang/10 dark:border-yin/10 last:dark:border-yin/10 border-t last:border-b'
+>
+    <a
+        href={url}
+        target='_blank'
+        rel='noopener noreferrer'
+        class='group-hover:bg-yang/[0.025] dark:group-hover:bg-yin/[0.025] relative flex items-center gap-6 py-8 pr-4 pl-4 transition-colors duration-300 sm:py-10 sm:pl-6'
     >
-    </div>
-    <div class='relative'>
-        <p class='text-xs font-bold uppercase'>
-            <time datetime={year.toString()}>{year}</time>
-        </p>
-        <div class='mt-1'>
-            <h2 class='text-2xl font-medium text-balance capitalize md:text-3xl'>
+        <!-- Main content -->
+        <div class='min-w-0 flex-1'>
+            <div class='mb-2 flex items-baseline gap-3'>
+                <span class='text-yang/25 dark:text-yin/25 font-mono text-[10px] tracking-widest'>{num}</span>
+                <span class='text-yang/40 dark:text-yin/40 truncate text-[10px] tracking-[0.2em] uppercase'
+                    >{subtitle}</span
+                >
+            </div>
+            <h2
+                class='group-hover:text-ajna text-4xl leading-[0.9] font-bold tracking-tight wrap-break-word transition-colors duration-300 sm:text-5xl md:text-6xl'
+            >
                 {name}
             </h2>
-            <h3 class='text-base font-light text-balance capitalize md:text-xl'>
-                {subtitle}
-            </h3>
+            <p class='text-yang/55 dark:text-yin/55 mt-3 max-w-lg text-sm leading-relaxed'>
+                {description}
+            </p>
+            <span
+                class='text-ajna mt-2 block text-xs font-medium opacity-60 transition-opacity duration-300 group-hover:opacity-100'
+            >
+                Visit →
+            </span>
         </div>
-    </div>
-    <div class='bg-yin/60 dark:bg-yang/60 -mx-4 -mb-4 flex flex-col gap-1 p-4'>
-        <p class='mt-2 text-sm leading-relaxed text-balance'>
-            {description}
-        </p>
-        <a href={url} title={name} target='_blank' rel='noopener noreferrer' class='text-ajna text-sm font-medium'>
-            <span class='absolute inset-0'></span>
-            {urlText}
-        </a>
-    </div>
+
+        <!-- Right side: year + image with ghost number overlay -->
+        <div class='flex shrink-0 flex-col items-end gap-3'>
+            <time class='text-ajna font-mono text-xs'>{year}</time>
+            <div class='relative'>
+                <!-- Ghost number overlapping top-left of image -->
+                <span
+                    class='pointer-events-none absolute top-2 -left-4 z-10 leading-none font-black text-white opacity-55 select-none sm:-left-6'
+                    style='font-size: clamp(2.5rem, 6vw, 4rem);'
+                    aria-hidden='true'>{num}</span
+                >
+                <div class='h-42 w-42 overflow-hidden rounded sm:h-48 sm:w-48 md:h-60 md:w-60'>
+                    <Image
+                        src={image}
+                        alt={name}
+                        width='900'
+                        height='900'
+                        class='size-full object-cover transition-transform duration-500 group-hover:scale-125'
+                    />
+                </div>
+            </div>
+        </div>
+    </a>
 </article>
