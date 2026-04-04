@@ -17,15 +17,15 @@ const num = String(index + 1).padStart(2, '0')
     >
         <!-- Image block: full-width on mobile (top), fixed-size column on desktop (right) -->
         <div class='order-first mb-4 flex shrink-0 flex-col items-end gap-3 sm:order-last sm:mb-0'>
-            <time class='text-ajna font-mono text-xs'>{year}</time>
+            <time class='text-ajna font-mono text-xs'>{num}</time>
             <div class='relative w-full sm:w-auto'>
                 <!-- Ghost number -->
                 <span
-                    class='pointer-events-none absolute top-2 left-2 z-10 leading-none font-black text-white opacity-55 select-none sm:-top-5 sm:-left-5'
-                    style='font-size: clamp(2.5rem, 6vw, 4rem);'
-                    aria-hidden='true'>{num}</span
+                    class='pointer-events-none absolute top-2 left-2 z-10 leading-none font-black text-white opacity-70 select-none sm:top-auto sm:bottom-2 sm:-left-14'
+                    style='font-size: clamp(2rem, 2.5vw, 2rem);'
+                    aria-hidden='true'>{year}</span
                 >
-                <div class='h-96 w-full overflow-hidden rounded sm:h-44 sm:w-40 md:h-56 md:w-52 lg:h-68 lg:w-60'>
+                <div class='h-96 w-full overflow-hidden rounded sm:h-44 sm:w-40 md:h-52 md:w-56 lg:h-60 lg:w-72'>
                     <Image
                         src={image}
                         alt={name}
@@ -40,7 +40,6 @@ const num = String(index + 1).padStart(2, '0')
         <!-- Main content -->
         <div class='min-w-0 flex-1'>
             <div class='mb-2 flex items-baseline gap-3'>
-                <span class='text-yang/25 dark:text-yin/25 font-mono text-[10px] tracking-widest'>{num}</span>
                 <span class='text-yang/40 dark:text-yin/40 truncate text-[10px] tracking-[0.2em] uppercase'
                     >{subtitle}</span
                 >
@@ -53,10 +52,10 @@ const num = String(index + 1).padStart(2, '0')
             <p class='text-yang/55 dark:text-yin/55 mt-3 max-w-sm text-sm leading-relaxed'>
                 {description}
             </p>
-            <span
-                class='text-ajna mt-2 block text-xs font-medium opacity-60 transition-opacity duration-300 group-hover:opacity-100'
-            >
-                Visit →
+            <span class='text-ajna relative mt-2 inline-block w-fit text-sm font-medium transition-all duration-300'>
+                {url} →
+                <span class='bg-ajna absolute bottom-0 left-0 h-px w-0 transition-all duration-300 group-hover:w-full'
+                ></span>
             </span>
         </div>
     </a>
