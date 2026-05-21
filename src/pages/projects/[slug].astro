@@ -23,7 +23,7 @@ const screenshotFulls = await Promise.all(screenshots.map((shot) => getImage({ s
 <BaseLayout pageTitle={name}>
     <article class='mx-auto max-w-3xl'>
         {/* Hero */}
-        <header class='mb-12 md:text-center'>
+        <header class='mb-10 md:text-center'>
             {
                 logo ? (
                     <div class='mt-10 w-28 md:mx-auto'>
@@ -59,7 +59,7 @@ const screenshotFulls = await Promise.all(screenshots.map((shot) => getImage({ s
         </header>
 
         {/* Cover */}
-        <div class='group relative mb-12 overflow-hidden rounded'>
+        <div class='group relative mb-8 overflow-hidden rounded shadow-lg'>
             <span
                 class='pointer-events-none absolute bottom-3 left-4 z-10 leading-none font-black text-white opacity-80 select-none'
                 style='font-size: clamp(3rem, 9vw, 5rem);'
@@ -76,7 +76,7 @@ const screenshotFulls = await Promise.all(screenshots.map((shot) => getImage({ s
 
         {/* Context */}
         <section class='py-6'>
-            <h2 class='text-ajna mb-4 text-sm font-medium tracking-widest uppercase'>Context</h2>
+            <h2 class='mb-8 text-4xl leading-[0.9] font-bold tracking-tight md:text-5xl'>{name}</h2>
             <p class='leading-relaxed'>{context}</p>
         </section>
 
@@ -108,11 +108,11 @@ const screenshotFulls = await Promise.all(screenshots.map((shot) => getImage({ s
                         </div>
 
                         {/* md+: thumbnail grid (3 per row), click to open the lightbox */}
-                        <div class='hidden gap-3 md:grid md:grid-cols-3'>
+                        <div class='hidden gap-3 md:grid md:grid-cols-3 md:gap-5 lg:gap-6'>
                             {screenshots.map((shot, i) => (
                                 <button
                                     type='button'
-                                    class='screenshot-thumb group border-yang/10 dark:border-yin/10 hover:border-ajna cursor-zoom-in overflow-hidden rounded border transition-colors duration-300'
+                                    class='screenshot-thumb group border-yang/10 dark:border-yin/10 hover:border-ajna cursor-zoom-in overflow-hidden rounded border shadow-sm transition-colors duration-300'
                                     data-full={screenshotFulls[i].src}
                                     aria-label={`Open ${shot.alt}`}
                                 >

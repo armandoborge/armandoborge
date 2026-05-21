@@ -1,8 +1,8 @@
 import contentImage from '../assets/img/content.jpg'
-import asanaImage from '../assets/img/asana.jpg'
+import asanaImage from '../assets/img/yogis.jpg'
 import yatchImage from '../assets/img/yatch.jpg'
 import womanImage from '../assets/img/woman.jpg'
-import cactusImage from '../assets/img/cactus.jpg'
+import cactusImage from '../assets/img/cactus.png'
 import jaguarImage from '../assets/img/jaguar.jpg'
 import mexicoImage from '../assets/img/mx.jpg'
 import notebookImage from '../assets/img/notebook.jpg'
@@ -16,6 +16,8 @@ import tribuYogaLogoDark from '../assets/logos/tribu-yoga-dark.png'
 import capitallLogoLight from '../assets/logos/capitall-light.png'
 import capitallLogoDark from '../assets/logos/capitall-dark.png'
 import laCandidietaLogo from '../assets/logos/la-candidieta.png'
+import melisaLogoLight from '../assets/logos/melisa-light.png'
+import melisaLogoDark from '../assets/logos/melisa-dark.png'
 
 import contentSeedShot1 from '../assets/screenshots/content-seed-1.png'
 import contentSeedShot2 from '../assets/screenshots/content-seed-2.png'
@@ -164,7 +166,7 @@ export const selectedWork = [
         year: 2023,
         image: cactusImage,
         caseStudy: {
-            logo: null,
+            logo: { light: melisaLogoLight, dark: melisaLogoDark },
             tagline: 'Multilingual portfolio for a designer and brand strategist',
             yearLabel: '2023',
             role: 'Full-Stack Engineer · Built for long-term design partner Melisa Redondo',
