@@ -1,19 +1,19 @@
 ---
 import { Image } from 'astro:assets'
 
+import LinkIcon from '@/components/LinkIcon.astro'
+
 const { project, index } = Astro.props
-const { name, subtitle, year, description, image, url } = project
+const { name, subtitle, year, description, image, slug } = project
 const num = String(index + 1).padStart(2, '0')
 ---
 
 <article
-    class='group border-yang/10 last:border-yang/10 dark:border-yin/10 last:dark:border-yin/10 mx-auto max-w-4xl border-t last:border-b'
+    class='group border-yang/10 dark:border-yin/10 hover:border-ajna mx-auto max-w-4xl overflow-hidden rounded border transition-all duration-300 hover:shadow-lg'
 >
     <a
-        href={url}
-        target='_blank'
-        rel='noopener noreferrer'
-        class='group-hover:bg-yang/2.5 dark:group-hover:bg-yin/2.5 relative flex flex-col px-4 py-6 transition-colors duration-300 sm:flex-row sm:items-center sm:gap-6 sm:py-10 sm:pr-4 sm:pl-6'
+        href={`/projects/${slug}`}
+        class='group-hover:bg-yang/2.5 dark:group-hover:bg-yin/2.5 relative flex flex-col px-4 py-6 transition-colors duration-300 sm:flex-row sm:items-center sm:gap-6 sm:pr-4 sm:pl-6'
     >
         <!-- Image block: full-width on mobile (top), fixed-size column on desktop (right) -->
         <div class='order-first mb-4 flex shrink-0 flex-col items-end gap-3 sm:order-last sm:mb-0'>
@@ -21,7 +21,7 @@ const num = String(index + 1).padStart(2, '0')
             <div class='relative w-full sm:w-auto'>
                 <!-- Ghost number -->
                 <span
-                    class='pointer-events-none absolute top-2 left-2 z-10 leading-none font-black text-white opacity-70 select-none sm:top-auto sm:bottom-2 sm:-left-14'
+                    class='pointer-events-none absolute top-2 left-2 z-10 leading-none font-black text-white opacity-80 select-none sm:top-auto sm:bottom-2'
                     style='font-size: clamp(2rem, 2.5vw, 2rem);'
                     aria-hidden='true'>{year}</span
                 >
@@ -53,7 +53,7 @@ const num = String(index + 1).padStart(2, '0')
                 {description}
             </p>
             <span class='text-ajna relative mt-2 inline-block w-fit text-sm font-medium transition-all duration-300'>
-                {url} →
+                Read case study <LinkIcon />
                 <span class='bg-ajna absolute bottom-0 left-0 h-px w-0 transition-all duration-300 group-hover:w-full'
                 ></span>
             </span>

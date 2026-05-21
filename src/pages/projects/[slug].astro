@@ -1,0 +1,257 @@
+---
+import { Image, getImage } from 'astro:assets'
+
+import BaseLayout from '@/layouts/BaseLayout.astro'
+import LinkIcon from '@/components/LinkIcon.astro'
+import { selectedWork } from '../../data/projectsData.js'
+
+export function getStaticPaths() {
+    return selectedWork.map((project) => ({
+        params: { slug: project.slug },
+        props: { project },
+    }))
+}
+
+const { project } = Astro.props
+const { name, image, year } = project
+const { logo, tagline, yearLabel, role, liveUrl, context, built, screenshots } = project.caseStudy
+
+// Full-size optimized URLs for the lightbox modal (md+).
+const screenshotFulls = await Promise.all(screenshots.map((shot) => getImage({ src: shot.src, width: 1600 })))
+---
+
+<BaseLayout pageTitle={name}>
+    <article class='mx-auto max-w-3xl'>
+        {/* Hero */}
+        <header class='mb-12 md:text-center'>
+            {
+                logo ? (
+                    <div class='mt-10 w-28 md:mx-auto'>
+                        <img src={logo.light.src} alt={`${name} logo`} class='w-full object-contain dark:hidden' />
+                        <img src={logo.dark.src} alt={`${name} logo`} class='hidden w-full object-contain dark:block' />
+                    </div>
+                ) : (
+                    <h1 class='text-ajna mt-12 text-5xl font-bold tracking-tight'>{name}</h1>
+                )
+            }
+            <div class='border-yang/10 dark:border-yin/10 mt-6 flex min-w-0 flex-col gap-1 border-t pt-6'>
+                <p class='text-lg leading-relaxed'>{tagline}</p>
+                <div class='flex flex-wrap gap-x-3 gap-y-1 text-sm md:justify-center'>
+                    <span>{yearLabel}</span>
+                    <span aria-hidden='true'>·</span>
+                    <span>{role}</span>
+                </div>
+                <p>
+                    <a
+                        href={liveUrl}
+                        target='_blank'
+                        rel='noopener noreferrer'
+                        class='group text-ajna relative inline-block w-fit text-sm font-medium transition-all duration-300'
+                    >
+                        {liveUrl}
+                        <LinkIcon />
+                        <span
+                            class='bg-ajna absolute bottom-0 left-0 h-px w-0 transition-all duration-300 group-hover:w-full'
+                        ></span>
+                    </a>
+                </p>
+            </div>
+        </header>
+
+        {/* Cover */}
+        <div class='group relative mb-12 overflow-hidden rounded'>
+            <span
+                class='pointer-events-none absolute bottom-3 left-4 z-10 leading-none font-black text-white opacity-80 select-none'
+                style='font-size: clamp(3rem, 9vw, 5rem);'
+                aria-hidden='true'>{year}</span
+            >
+            <Image
+                src={image}
+                alt={name}
+                width='900'
+                height='900'
+                class='aspect-video w-full object-cover transition-transform duration-700 group-hover:scale-110'
+            />
+        </div>
+
+        {/* Context */}
+        <section class='py-6'>
+            <h2 class='text-ajna mb-4 text-sm font-medium tracking-widest uppercase'>Context</h2>
+            <p class='leading-relaxed'>{context}</p>
+        </section>
+
+        {/* What I built */}
+        <section class='py-6'>
+            <h2 class='text-ajna mb-4 text-sm font-medium tracking-widest uppercase'>What I built</h2>
+            <ul class='list-disc space-y-2 pl-5 leading-relaxed'>
+                {built.map((item) => <li>{item}</li>)}
+            </ul>
+        </section>
+
+        {/* Screenshots */}
+        {
+            screenshots.length > 0 && (
+                <Fragment>
+                    <section class='py-6'>
+                        <h2 class='text-ajna mb-4 text-sm font-medium tracking-widest uppercase'>Screenshots</h2>
+
+                        {/* Mobile: stacked full-width images */}
+                        <div class='space-y-4 md:hidden'>
+                            {screenshots.map((shot) => (
+                                <Image
+                                    src={shot.src}
+                                    alt={shot.alt}
+                                    width='1600'
+                                    class='border-yang/10 dark:border-yin/10 w-full rounded border'
+                                />
+                            ))}
+                        </div>
+
+                        {/* md+: thumbnail grid (3 per row), click to open the lightbox */}
+                        <div class='hidden gap-3 md:grid md:grid-cols-3'>
+                            {screenshots.map((shot, i) => (
+                                <button
+                                    type='button'
+                                    class='screenshot-thumb group border-yang/10 dark:border-yin/10 hover:border-ajna cursor-zoom-in overflow-hidden rounded border transition-colors duration-300'
+                                    data-full={screenshotFulls[i].src}
+                                    aria-label={`Open ${shot.alt}`}
+                                >
+                                    <Image
+                                        src={shot.src}
+                                        alt={shot.alt}
+                                        width='400'
+                                        class='aspect-4/3 w-full object-cover transition-transform duration-300 group-hover:scale-110'
+                                    />
+                                </button>
+                            ))}
+                        </div>
+                    </section>
+
+                    {/* Lightbox modal */}
+                    <div
+                        id='screenshot-modal'
+                        class='fixed inset-0 z-50 hidden items-center justify-center bg-black/80 p-6'
+                    >
+                        <button
+                            type='button'
+                            id='screenshot-modal-close'
+                            class='absolute top-5 right-5 cursor-pointer text-white/70 transition-colors hover:text-white'
+                            aria-label='Close'
+                        >
+                            <svg
+                                viewBox='0 0 24 24'
+                                fill='none'
+                                stroke='currentColor'
+                                stroke-width='2'
+                                stroke-linecap='round'
+                                class='size-7'
+                            >
+                                <path d='M6 6 18 18M18 6 6 18' />
+                            </svg>
+                        </button>
+                        {screenshots.length > 1 && (
+                            <Fragment>
+                                <button
+                                    type='button'
+                                    id='screenshot-modal-prev'
+                                    class='absolute top-1/2 left-4 -translate-y-1/2 cursor-pointer text-white/70 transition-colors hover:text-white'
+                                    aria-label='Previous screenshot'
+                                >
+                                    <svg
+                                        viewBox='0 0 24 24'
+                                        fill='none'
+                                        stroke='currentColor'
+                                        stroke-width='2'
+                                        stroke-linecap='round'
+                                        stroke-linejoin='round'
+                                        class='size-9'
+                                    >
+                                        <path d='M15 6 9 12 15 18' />
+                                    </svg>
+                                </button>
+                                <button
+                                    type='button'
+                                    id='screenshot-modal-next'
+                                    class='absolute top-1/2 right-4 -translate-y-1/2 cursor-pointer text-white/70 transition-colors hover:text-white'
+                                    aria-label='Next screenshot'
+                                >
+                                    <svg
+                                        viewBox='0 0 24 24'
+                                        fill='none'
+                                        stroke='currentColor'
+                                        stroke-width='2'
+                                        stroke-linecap='round'
+                                        stroke-linejoin='round'
+                                        class='size-9'
+                                    >
+                                        <path d='M9 6 15 12 9 18' />
+                                    </svg>
+                                </button>
+                            </Fragment>
+                        )}
+                        <img
+                            id='screenshot-modal-image'
+                            src=''
+                            alt=''
+                            class='max-h-[60vh] max-w-[60vw] rounded object-contain'
+                        />
+                    </div>
+                </Fragment>
+            )
+        }
+    </article>
+
+    <script>
+        function setupScreenshotModal() {
+            const modal = document.getElementById('screenshot-modal')
+            const modalImg = document.getElementById('screenshot-modal-image')
+            if (!modal || !modalImg) return
+
+            const thumbs = Array.from(document.querySelectorAll('.screenshot-thumb'))
+            const shots = thumbs.map((btn) => ({
+                src: btn.getAttribute('data-full') || '',
+                alt: btn.querySelector('img')?.getAttribute('alt') || '',
+            }))
+            if (shots.length === 0) return
+            let index = 0
+
+            const render = () => {
+                modalImg.setAttribute('src', shots[index].src)
+                modalImg.setAttribute('alt', shots[index].alt)
+            }
+            const open = (i: number) => {
+                index = i
+                render()
+                modal.classList.remove('hidden')
+                modal.classList.add('flex')
+                document.body.style.overflow = 'hidden'
+            }
+            const close = () => {
+                modal.classList.add('hidden')
+                modal.classList.remove('flex')
+                modalImg.setAttribute('src', '')
+                document.body.style.overflow = ''
+            }
+            const step = (delta: number) => {
+                index = (index + delta + shots.length) % shots.length
+                render()
+            }
+
+            thumbs.forEach((btn, i) => btn.addEventListener('click', () => open(i)))
+            document.getElementById('screenshot-modal-close')?.addEventListener('click', close)
+            document.getElementById('screenshot-modal-prev')?.addEventListener('click', () => step(-1))
+            document.getElementById('screenshot-modal-next')?.addEventListener('click', () => step(1))
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) close()
+            })
+            document.addEventListener('keydown', (e) => {
+                if (modal.classList.contains('hidden')) return
+                if (e.key === 'Escape') close()
+                else if (e.key === 'ArrowLeft') step(-1)
+                else if (e.key === 'ArrowRight') step(1)
+            })
+        }
+
+        setupScreenshotModal()
+    </script>
+</BaseLayout>
