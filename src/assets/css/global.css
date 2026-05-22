@@ -44,6 +44,10 @@
     .global-input {
         @apply border-yang/50 dark:border-yin/50 focus:border-ajna focus:outline-ajna block w-full border border-dotted px-2 py-2 text-base outline-1 outline-offset-1 outline-transparent outline-dotted;
     }
+
+    .section-label {
+        @apply text-ajna text-sm font-bold tracking-widest uppercase;
+    }
 }
 
 @media (prefers-color-scheme: dark) {

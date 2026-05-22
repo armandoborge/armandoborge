@@ -1,5 +1,6 @@
 ---
 import { Image, getImage } from 'astro:assets'
+import { marked } from 'marked'
 
 import BaseLayout from '@/layouts/BaseLayout.astro'
 import LinkIcon from '@/components/LinkIcon.astro'
@@ -14,7 +15,7 @@ export function getStaticPaths() {
 
 const { project } = Astro.props
 const { name, image, year } = project
-const { logo, tagline, yearLabel, role, liveUrl, context, built, screenshots } = project.caseStudy
+const { logo, tagline, yearLabel, role, liveUrl, sections, screenshots } = project.caseStudy
 
 // Full-size optimized URLs for the lightbox modal (md+).
 const screenshotFulls = await Promise.all(screenshots.map((shot) => getImage({ src: shot.src, width: 1600 })))
@@ -23,10 +24,10 @@ const screenshotFulls = await Promise.all(screenshots.map((shot) => getImage({ s
 <BaseLayout pageTitle={name}>
     <article class='mx-auto max-w-3xl'>
         {/* Hero */}
-        <header class='mb-10 md:text-center'>
+        <header class='mb-10'>
             {
                 logo ? (
-                    <div class='mt-10 w-28 md:mx-auto'>
+                    <div class='mx-auto mt-10 w-28'>
                         <img src={logo.light.src} alt={`${name} logo`} class='w-full object-contain dark:hidden' />
                         <img src={logo.dark.src} alt={`${name} logo`} class='hidden w-full object-contain dark:block' />
                     </div>
@@ -34,13 +35,9 @@ const screenshotFulls = await Promise.all(screenshots.map((shot) => getImage({ s
                     <h1 class='text-ajna mt-12 text-5xl font-bold tracking-tight'>{name}</h1>
                 )
             }
-            <div class='border-yang/10 dark:border-yin/10 mt-6 flex min-w-0 flex-col gap-1 border-t pt-6'>
+            <div class='border-yang/10 dark:border-yin/10 mt-4 flex min-w-0 flex-col gap-1 border-t pt-4 text-center'>
                 <p class='text-lg leading-relaxed'>{tagline}</p>
-                <div class='flex flex-wrap gap-x-3 gap-y-1 text-sm md:justify-center'>
-                    <span>{yearLabel}</span>
-                    <span aria-hidden='true'>·</span>
-                    <span>{role}</span>
-                </div>
+                <div class='text-sm'>Role: {role}</div>
                 <p>
                     <a
                         href={liveUrl}
@@ -61,8 +58,8 @@ const screenshotFulls = await Promise.all(screenshots.map((shot) => getImage({ s
         {/* Cover */}
         <div class='group relative mb-8 overflow-hidden rounded shadow-lg'>
             <span
-                class='pointer-events-none absolute bottom-3 left-4 z-10 leading-none font-black text-white opacity-80 select-none'
-                style='font-size: clamp(3rem, 9vw, 5rem);'
+                class='pointer-events-none absolute right-4 bottom-3 z-10 leading-none font-black text-white opacity-80 select-none'
+                style='font-size: clamp(3rem, 5vw, 4rem);'
                 aria-hidden='true'>{year}</span
             >
             <Image
@@ -74,26 +71,25 @@ const screenshotFulls = await Promise.all(screenshots.map((shot) => getImage({ s
             />
         </div>
 
-        {/* Context */}
-        <section class='py-6'>
-            <h2 class='mb-8 text-4xl leading-[0.9] font-bold tracking-tight md:text-5xl'>{name}</h2>
-            <p class='leading-relaxed'>{context}</p>
-        </section>
-
-        {/* What I built */}
-        <section class='py-6'>
-            <h2 class='text-ajna mb-4 text-sm font-medium tracking-widest uppercase'>What I built</h2>
-            <ul class='list-disc space-y-2 pl-5 leading-relaxed'>
-                {built.map((item) => <li>{item}</li>)}
-            </ul>
-        </section>
+        {/* Case study sections */}
+        {
+            sections.map((section) => (
+                <section class='py-6'>
+                    <h2 class='section-label mb-4'>{section.heading}</h2>
+                    <div
+                        class='[&_a]:text-ajna space-y-4 leading-relaxed [&_a:hover]:underline'
+                        set:html={marked.parse(section.body)}
+                    />
+                </section>
+            ))
+        }
 
         {/* Screenshots */}
         {
             screenshots.length > 0 && (
                 <Fragment>
                     <section class='py-6'>
-                        <h2 class='text-ajna mb-4 text-sm font-medium tracking-widest uppercase'>Screenshots</h2>
+                        <h2 class='section-label mb-4'>Screenshots</h2>
 
                         {/* Mobile: stacked full-width images */}
                         <div class='space-y-4 md:hidden'>
