@@ -8,24 +8,24 @@ const { name, year, description, image, url } = project
 ---
 
 <article
-    class='group border-yang/10 dark:border-yin/10 hover:border-ajna / overflow-hidden rounded border duration-300 hover:shadow-lg'
+    class='group hover:border-ajna / @container overflow-hidden rounded border border-transparent duration-300 hover:shadow-lg'
 >
     <a
         href={url}
         target='_blank'
         rel='noopener noreferrer'
-        class='group-hover:bg-yang/2.5 dark:group-hover:bg-yin/2.5 flex h-full flex-col p-4 transition-colors duration-300 sm:flex-row sm:items-center sm:gap-4'
+        class='group-hover:bg-yang/2.5 dark:group-hover:bg-yin/2.5 flex h-full flex-col p-4 transition-colors duration-300 @sm:flex-row @sm:items-center @sm:gap-4'
     >
-        <!-- Image block: full-width on mobile (top), fixed-size column on desktop (right) -->
-        <div class='order-first mb-3 flex shrink-0 sm:order-last sm:mb-0'>
-            <div class='relative w-full sm:w-auto'>
+        <!-- Image block: full-width when stacked (top), fixed-size column when the card is wide enough (right) -->
+        <div class='order-first mb-3 flex shrink-0 @sm:order-last @sm:mb-0'>
+            <div class='relative w-full @sm:w-auto'>
                 <!-- Ghost number -->
                 <span
                     class='pointer-events-none absolute top-2 left-2 z-10 leading-none font-black text-white opacity-80 select-none'
                     style='font-size: clamp(1.5rem, 2vw, 1.75rem);'
                     aria-hidden='true'>{year}</span
                 >
-                <div class='h-48 w-full overflow-hidden rounded sm:h-24 sm:w-28 md:h-28 md:w-32'>
+                <div class='h-48 w-full overflow-hidden rounded @xs:h-40 @sm:h-28 @sm:w-32'>
                     <Image
                         src={image}
                         alt={name}
@@ -40,7 +40,7 @@ const { name, year, description, image, url } = project
         <!-- Main content -->
         <div class='min-w-0 flex-1'>
             <h3
-                class='group-hover:text-ajna text-lg leading-tight font-bold tracking-tight wrap-break-word transition-colors duration-300 sm:text-xl md:text-2xl'
+                class='group-hover:text-ajna text-xl leading-tight font-bold tracking-tight wrap-break-word transition-colors duration-300 @sm:text-2xl'
             >
                 {name}
             </h3>

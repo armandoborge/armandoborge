@@ -1,7 +1,7 @@
 ---
 import ProjectItem from '@/components/ProjectItem.astro'
-import OtherProjectItem from '@/components/OtherProjectItem.astro'
-import { selectedWork, otherProjects } from '../data/projectsData.js'
+import ExperimentItem from '@/components/ExperimentItem.astro'
+import { selectedWork, experiments } from '../data/projectsData.js'
 ---
 
 <section>
@@ -21,7 +21,7 @@ import { selectedWork, otherProjects } from '../data/projectsData.js'
         <span class='section-label'>Experiments</span>
         <span class='bg-yang/10 dark:bg-yin/10 h-px flex-1'></span>
     </div>
-    <div class='mx-auto grid max-w-4xl grid-cols-1 gap-4 sm:grid-cols-2'>
-        {otherProjects.map((project) => <OtherProjectItem project={project} />)}
+    <div class='mx-auto grid max-w-4xl grid-cols-1 gap-1 sm:grid-cols-2'>
+        {experiments.map((project) => <ExperimentItem project={project} />)}
     </div>
 </section>

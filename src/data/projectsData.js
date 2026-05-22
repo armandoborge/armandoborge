@@ -362,7 +362,7 @@ export const selectedWork = [
     },
 ]
 
-export const otherProjects = [
+export const experiments = [
     {
         name: 'Tripping Cats',
         year: 2019,
